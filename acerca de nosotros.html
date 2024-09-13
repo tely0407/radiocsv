@@ -23,11 +23,24 @@
 </head>
 <body>
     <header>
+        <div class="social-icons">
+            <a href="https://www.youtube.com/@csvradioonline1501" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/csv_radio" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/radio_csv" target="_blank" title="Twitter">
+                <img src="./img/x.jpg" alt="Twitter">
+              </a>
+            <a href="https://www.facebook.com/somoscsvradio/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+     
+    <div class="button-container">
+        <a href=https://linktr.ee/csv_radio class="linktree-button"><img src="./img/linketree.png" alt="Linktree">
+        </a>
+    </div>
+        </div>
         <nav>
             <ul>
-                <li><a href="./radio_csv.htm">CSV Radio</a></li>
-                <li><a href="./programacion.html">GRILLA</a></li>
-                <li><a href="./contacto.html">Contacto</a></li>
+                <li><a href="./radio_csv.html">CSV Radio</a></li>
+                <li><a href="./contacto.html">CONTACTO</a></li>
+                <li><a href="./talleresycursos.html">TALLERES</a></li>
             </ul>
                   </li>
                   
@@ -38,24 +51,6 @@
         </a>
     </div>
 
-<!-- JavaScript para el menú dropdown -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var menuToggle = document.getElementById('menu-toggle');
-    var dropdownMenu = document.querySelector('.dropdown-menu');
-
-    menuToggle.addEventListener('click', function(event) {
-        event.preventDefault(); // Evita el comportamiento por defecto del enlace
-        dropdownMenu.classList.toggle('active');
-    });
-
-    // Cierra el menú si se hace clic fuera de él
-    document.addEventListener('click', function(event) {
-        if (!menuToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
-            dropdownMenu.classList.remove('active');
-        }
-    });
-    </script>
 </header>
 <section>
     <div class="text-section">
@@ -68,7 +63,25 @@
                </h3>
         <img src="./img/layout.png" alt="Imagen Derecha">
     </div>
-    <style> @keyframes fadeInOut {
+    <style>
+    
+    /* Añadir espacio entre las palabras del menú */
+    header nav ul {
+        display: flex;
+        gap: 30px; /* Ajusta este valor según la separación deseada */
+    }
+
+    /* Estilo adicional para los elementos del menú */
+    header nav ul li {
+        list-style-type: none; /* Quitar los puntos de la lista */
+    }
+
+    
+    
+    
+    
+    
+    @keyframes fadeInOut {
         0%, 100% { opacity: 0; }
         50% { opacity: 1; }
     }
@@ -124,10 +137,16 @@ footer {
         <div class="social-icons">
             <a href="https://www.youtube.com/@csvradioonline1501" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
             <a href="https://www.instagram.com/csv_radio" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://x.com/radio_csv" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://x.com/radio_csv" target="_blank" title="Twitter">
+                <img src="./img/x.jpg" alt="Twitter">
+              </a>
             <a href="https://www.facebook.com/somoscsvradio/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-        </div>
-    </footer>
+     
+    <div class="button-container">
+        <a href=https://linktr.ee/csv_radio class="linktree-button"><img src="./img/linketree.png" alt="Linktree">
+        </a>
+    </div>
+        </div></footer>
 
     <script>
         const slides = document.querySelectorAll('.carousel .slide');

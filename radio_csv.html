@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="CSV RADIO">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="CSV RADIO">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
       <!-- Estilos CSS -->
@@ -43,7 +43,7 @@
         { url: 'contacto.html', title: 'Contacto' },
         { url: 'pasionRacinguista.html', title: 'Pasión Racinguista' },
         { url: 'presentePasado.html', title: 'Presente y Pasado' },
-        { url: 'tertuliaDeLosHacedores.html', title: 'Tertulia de Hacedores' },
+        { url: 'tertuliaDeLosHacedores.html', title: 'Tertulia los Hacedores' },
         { url: 'deTodoUnPoco.html', title: 'De Todo Un Poco' },
         { url: 'miBuenosAiresQuerido.html', title: 'Mi Buenos Aires Querido' },
         { url: 'motonoticias.html', title: 'Motonoticias' },
@@ -51,6 +51,7 @@
         { url: 'sinSulfitos.html', title: 'Sin Sulfitos' },
         { url: 'todoPorElTango.html', title: 'Todo Por El Tango' },
         { url: 'quieroMiPrograma.html', title: 'Quiero Mi Programa' },
+        { url: 'programacion.html', title: 'Grilla' },
     ];
 
     let resultsFound = false;
@@ -74,7 +75,9 @@
         <div class="social-icons">
             <a href="https://www.youtube.com/@csvradioonline1501" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
             <a href="https://www.instagram.com/csv_radio" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://x.com/radio_csv" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://x.com/radio_csv" target="_blank" title="Twitter">
+                <img src="./img/x.jpg" alt="Twitter">
+              </a>
             <a href="https://www.facebook.com/somoscsvradio/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
      
     <div class="button-container">
@@ -86,7 +89,7 @@
             <ul>
                 <li><a href="./acerca de nosotros.html">ACERCA DE </a></li>
                 <li><a href="./contacto.html">CONTACTO</a></li>
-                <li><a href="./programacion.html"> GRILLA </a></li>
+                <li><a href="./talleresycursos.html"> TALLERES </a></li>
                 
             </ul>
             <div class="menu-hamburg" id="menu-toggle">
@@ -97,13 +100,14 @@
             <ul class="dropdown-menu" id="dropdown-menu">
                 <li><a href="pasionRacinguista.html">Pasión Racinguista</a></li>
                 <li><a href="presentePasado.html">Presente y Pasado</a></li>
-                <li><a href="tertuliaDeLosHacedores.html">Tertulia de Hacedores</a></li>
+                <li><a href="tertuliaDeLosHacedores.html">Tertulia los Hacedores</a></li>
                 <li><a href="sinSulfitos.html">Sin Sulfitos</a></li>
                 <li><a href="motonoticias.html">Motonoticias</a></li>
                 <li><a href="todoPorEl Tango.html">Todo por el Tango</a></li>
                 <li><a href="miBuenosAiresQuerido.html">Mi Buenos Aires Querido</a></li>
                 <li><a href="deTodoUnPoco.html">De todo un Poco</a></li>
                 <li><a href="algoParaDecir.html">Algo para decir</a></li>
+                <li><a href="programacion.html">Bajar Grilla</a></li>
             </ul>
         </nav>
        
@@ -145,12 +149,14 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="hero-content">
         <div class="side-screens">
             <div class="screen screen-left">
-                SEGUINOS
+                SEGUINOS POR:
                 <a href="https://www.youtube.com/@csvradioonline1501" class="youtube-icon" target="_blank">
                     <i class="fab fa-youtube"></i> YouTube
                 </a>
             </div>
         </div>
+        
+          
         <div class="video-cube">
             <div class="cube-container">
                 <div class="cube">
@@ -162,43 +168,44 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="face bottom"><img src="img/layout.png" alt="Bottom"></div>
                 </div>
             </div>
+            <div class="notification">Presiona el cubo</div>
         </div>
-        <audio id="cubeSound" src="https://argentina.republicahosting.com:2471/live"></audio>
-<script>document.querySelector('.video-cube').addEventListener('click', function() {
-    // Reproducir el audio
-    const audio = document.getElementById('cubeSound');
-    audio.play();
-
-    // Aquí puedes agregar más acciones que deseas activar al tocar el cubo
-    console.log('El cubo fue tocado');
-});
-</script>
-        <div class="side-screens">
-            <div class="screen screen-right">
-                BAJA LA APP
-                <div class="app-links">
-                    <a href="https://play.google.com/store/apps/details?id=com.app.csv_radio&hl=es_NI&gl=US&pli=1" target="_blank">
-                        <img src="./img/google app.png" alt="Google Play" style="height: 50px;">
-                    </a>
-                    <a href="https://apps.apple.com/us/app/idXXXXXXXXX" target="_blank"> <!-- Cambia XXXXXXXXX por el ID de tu app en el App Store -->
-                        <img src="./img/applestore.png" alt="Apple Store" style="height: 50px;">
-                    </a>
-                </div>
-            </div>
-        </div>
+        <!-- Nuevo elemento de audio agregado -->
+        <audio id="radioPlayer" src="https://argentina.republicahosting.com:2471/live"></audio>
     </div>
 </section>
 
+<script>
+    document.querySelector('.video-cube').addEventListener('click', function() {
+        const audio = document.getElementById('radioPlayer'); // Asegúrate de usar el nuevo ID aquí
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+        console.log('El cubo fue tocado');
+    });
+</script>
 
+            <div class="side-screens">
+            <div class="screen screen-right">
+                BAJA LA APP
+                <div class="app-container">
+                   <div class="app" href="https://play.google.com/store/apps/details?id=com.app.csv_radio&hl=es_NI&gl=US&pli=1" target="_blank">
+                        <img src="./img/google app.png" alt="Google Play" style="height: 50px;">
+                    </div>
+                    <div class="app"href="https://apps.apple.com/us/app/idXXXXXXXXX" target="_blank"> <!-- Cambia XXXXXXXXX por el ID de tu app en el App Store -->
+                        <img src="./img/applestore.png" alt="Apple Store" style="height: 50px;">
+                    </div> </div>
+        </div>
+    </div>
+
+</section>
 <section class="news-section">
-    <h2>Últimas noticias de CNN</h2>
+    <h3>ULTIMAS NOTICIAS EN CNN</h3>
     <iframe src="https://cnnespanol.cnn.com/seccion/cnn-radio-argentina/" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
-
-    </section>
-
-
-
-            <script>
+ </section>
+ <script>
                 document.addEventListener('DOMContentLoaded', function() {
                     var storeLink = document.getElementById('store-link');
                     var googleIcon = document.getElementById('google-icon');
@@ -226,10 +233,12 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="radio-player">
             <div class="radio-controls">
                 <button id="playPauseBtn" class="control-btn">
-                    <span id="playPauseIcon">▶️</span>
+                    
+                    <div class="light"></div>
                 </button>
                 <div id="timer" class="timer">00:00  </div>
-                <div id="timer" class="timer">CVS LIVE BROADCAST </div>
+                
+                <div id="timer" class="timer">  CVS LIVE BROADCAST </div>
                 <input type="range" id="volumeControl" class="volume-slider" min="0" max="1" step="0.01" value="0.5">
                 <span id="volumeIcon">🔊</span>
             </div>
@@ -282,7 +291,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
   <section> 
-    <h3>Buenos Aires, Argentina: <span id="hora-buenos-aires"></span>, <span id="fecha-buenos-aires"></span></h3>
+    <h2>Buenos Aires, Argentina: <span id="hora-buenos-aires"></span>, <span id="fecha-buenos-aires"></span></h2>
     <script>
        function mostrarHoraBuenosAires() {
   const opcionesHora = { timeZone: 'America/Argentina/Buenos_Aires', hour: 'numeric', minute: 'numeric' };
@@ -314,21 +323,15 @@ setInterval(mostrarHoraBuenosAires, 1000);
                     
                 </div>
                 </div>
-                <div class="link-container">
-                    <a href="http://www.carlossviamonte.com.ar/" target="_blank">
-                        <div class="video-cube">
-                            <div class="cube-container">
-                                <div class="cube">
-                                    <div class="face front"><img src="img/biblioteca.jpeg" alt="Front"></div>
-                                    <div class="face back"><img src="img/biblioteca.jpeg" alt="Back"></div>
-                                    <div class="face left"><img src="img/biblioteca.jpeg" alt="Left"></div>
-                                    <div class="face right"><img src="img/biblioteca.jpeg" alt="Right"></div>
-                                    <div class="face top"><img src="img/biblioteca.jpeg" alt="Top"></div>
-                                    <div class="face bottom"><img src="img/biblioteca.jpeg" alt="Bottom"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+               
+                <div class="gallery-container">
+                    <div class="gallery">
+                        <img src="img/radioxdentro (3).jpeg" alt="Imagen 1">
+                        <img src="img/radioxdentro (7).jpeg" alt="Imagen 2">
+                        <img src="img/radioxdentro (8).jpeg" alt="Imagen 3">
+                        <img src="img/radioxdentro (9).jpeg" alt="Imagen 4">
+                    
+                </div>
                 </div>
                 <div class="gallery-container">
                     <div class="gallery">
@@ -340,27 +343,47 @@ setInterval(mostrarHoraBuenosAires, 1000);
                 </div>
                 </div>
      </section>
-    
      <section class="prefooter">
-        <div class="prefooter-content">
-            <img src="img/radioxdentro (7).jpeg" alt="Imagen 1">
-            <img src="img/radioxdentro (3).jpeg" alt="Imagen 2">
-            <img src="img/radioxdentro (9).jpeg" alt="Imagen 3">
-        </div>
-    </section>
+    <h2>Haz clic en el cubo para ser redirigido a la Biblioteca CSV</h2>
+    <div class="link-container">
+        <a href="http://www.carlossviamonte.com.ar/" target="_blank">
+            <div class="link-cube-container">
+                <div class="link-cube">
+                    <div class="face front"><img src="img/biblioteca.jpeg" alt="Front"></div>
+                    <div class="face back"><img src="img/biblioteca.jpeg" alt="Back"></div>
+                    <div class="face left"><img src="img/biblioteca.jpeg" alt="Left"></div>
+                    <div class="face right"><img src="img/biblioteca.jpeg" alt="Right"></div>
+                    <div class="face top"><img src="img/biblioteca.jpeg" alt="Top"></div>
+                    <div class="face bottom"><img src="img/biblioteca.jpeg" alt="Bottom"></div>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+
     
 <footer>
     
     <div>
+        <!-- reCAPTCHA widget -->
+        <div class="g-recaptcha" data-sitekey="TU_CLAVE_DEL_SITIO"></div>
+            
       <a href="./quieroMiPrograma.html">#QUIEROMIPROGRAMA</a>
       <a href="https://linktr.ee/csv_radio" target="_blank" title="Redes">REDES</a>
       <a href="./contacto.html" target="_blank" title="Contactanos">CONTACTANOS</a>
     </div>
     <div class="social-icons">
-      <a href="https://www.youtube.com/@csvradioonline1501" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-      <a href="https://www.instagram.com/csv_radio" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://x.com/radio_csv" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.facebook.com/somoscsvradio/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/@csvradioonline1501" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/csv_radio" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/radio_csv" target="_blank" title="Twitter">
+            <img src="./img/x.jpg" alt="Twitter">
+          </a>
+        <a href="https://www.facebook.com/somoscsvradio/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+ 
+<div class="button-container">
+    <a href=https://linktr.ee/csv_radio class="linktree-button"><img src="./img/linketree.png" alt="Linktree">
+    </a>
+</div>
     </div>
 </footer>
 </body>

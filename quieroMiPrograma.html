@@ -35,6 +35,7 @@
             <ul>
                 <li> <a href="./radio_csv.html"  title="radio_csv">RADIO CSV</a>
                 <li><a href="./acerca de nosotros.html">ACERCA DE </a></li>
+                <li><a href="./talleresycursos.html">TALLERES</a></li>
                 <li><a href="./contacto.html">CONTACTO</a></li>
     </ul>
     </li>
@@ -45,24 +46,6 @@
         </a>
     </div>
 
-<!-- JavaScript para el menú dropdown -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var menuToggle = document.getElementById('menu-toggle');
-    var dropdownMenu = document.querySelector('.dropdown-menu');
-
-    menuToggle.addEventListener('click', function(event) {
-        event.preventDefault(); // Evita el comportamiento por defecto del enlace
-        dropdownMenu.classList.toggle('active');
-    });
-
-    // Cierra el menú si se hace clic fuera de él
-    document.addEventListener('click', function(event) {
-        if (!menuToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
-            dropdownMenu.classList.remove('active');
-        }
-    });
-    </script>
 </header>
 <style>
 
@@ -123,6 +106,7 @@ footer {
 /* Elimina cualquier margen o padding adicional del cuerpo y HTML */
 body, html {
     margin: 0;
+    background-color: #f4f4f4;
     padding: 0;
     width: 100%;
     height: 100%;
@@ -130,9 +114,9 @@ body, html {
 
         .carousel {
     position: relative;
-    width: 80%; /* Reduce el ancho al 80% */
+    width: 100%; /* Reduce el ancho al 80% */
     max-width: 800px; /* Ajusta el tamaño máximo */
-    height: 300px; /* Reduce la altura del carrusel */
+    height: 400px; /* Reduce la altura del carrusel */
     margin: 20px auto;
     overflow: hidden;
     border: 2px solid #0a0909;
@@ -216,7 +200,7 @@ body, html {
             <div class="caption">STREAMING</div>
         </div>
         <div class="slide">
-            <img src="./img/radioxdentro (9).jpeg" alt="Imagen 3">
+            <img src="./img/Radio sumate.jpg" alt="Imagen 3">
             <div class="caption">TU ESPACIO, TU RADIO</div>
         </div>
       

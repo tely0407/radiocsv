@@ -25,17 +25,24 @@
 <body>
 <!-- Header con menú hamburguesa y redes sociales -->
 <header>
-    <div class="header-content">
-        <div class="social-icons">
-            <a href="https://www.youtube.com/@csvradioonline1501" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.instagram.com/csv_radio" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://x.com/radio_csv" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.facebook.com/somoscsvradio/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-        </div>
+    <div class="social-icons">
+        <a href="https://www.youtube.com/@csvradioonline1501" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/csv_radio" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/radio_csv" target="_blank" title="Twitter">
+            <img src="./img/x.jpg" alt="Twitter">
+          </a>
+        <a href="https://www.facebook.com/somoscsvradio/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+ 
+<div class="button-container">
+    <a href=https://linktr.ee/csv_radio class="linktree-button"><img src="./img/linketree.png" alt="Linktree">
+    </a>
+</div>
+    </div>
         <nav class="menu-fixed">
             <ul>
                 <li> <a href="./radio_csv.html"  title="radio_csv">RADIO CSV</a>
                 <li><a href="./acerca de nosotros.html">ACERCA DE </a></li>
+                <li><a href="./talleresycursos.html">TALLERES</a></li>
                 <li><a href="./contacto.html">CONTACTO</a></li>
     </ul>
     </li>
@@ -46,27 +53,84 @@
         </a>
     </div>
 
-<!-- JavaScript para el menú dropdown -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var menuToggle = document.getElementById('menu-toggle');
-    var dropdownMenu = document.querySelector('.dropdown-menu');
 
-    menuToggle.addEventListener('click', function(event) {
-        event.preventDefault(); // Evita el comportamiento por defecto del enlace
-        dropdownMenu.classList.toggle('active');
-    });
-
-    // Cierra el menú si se hace clic fuera de él
-    document.addEventListener('click', function(event) {
-        if (!menuToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
-            dropdownMenu.classList.remove('active');
-        }
-    });
-    </script>
 </header>
-<style>
+<div class="carousel">
+        <div class="slide active">
+            <img src="./img/radioxdentro (1).jpeg" alt="Imagen 1">
+            <div class="caption">Conducen: Guillermo Fuentes Rey y Rocio Mendez</div>
+        </div>
+        <div class="slide">
+            <img src="./img/radioxdentro (3).jpeg" alt="Imagen 2">
+            <div class="caption">Este programa versa sobre...</div>
+        </div>
+        <div class="slide">
+            <img src="./img/radioxdentro (8).jpeg" alt="Imagen 3">
+            <div class="caption">Viernes 16 hs</div>
+        </div>
         
+        <div class="buttons">
+            <button id="prev">Anterior</button>
+            <button id="next">Siguiente</button>
+        </div>
+    </div>
+    <main>
+        <!-- Contenido principal de la página -->
+        <section class="descripcion">
+            <div class="descripcion-container">
+                <h2>Todos los viernes 16 hs</h2>
+                <h1>Programas ya emitidos</h1>
+                <p>Haz clic en el botón para ser redirigido </p>
+                <button onclick="window.location.href='https://www.youtube.com/results?search_query=csv+radio+de+todo+un+poco';">De todo un Poco</button> 
+            </div>
+            <a href="https://linktr.ee/csv_radio" class="linktree-button">
+                <img src="./img/linketree.png" alt="Linktree" style="width: 80px; height: auto;">
+        <style>
+    main {
+        padding-bottom: 60px; /* Espaciado inferior para separar del footer */
+    }
+
+    /* Estilos para la sección de descripción */
+    .descripcion {
+        background-color: #f3f3f3; /* Color de fondo de la sección */
+        padding: 40px; /* Espacio interno */
+        text-align: center; /* Alineación del texto */
+        margin-bottom: 20px; /* Espacio hacia abajo para separar del footer */
+    }
+
+    .descripcion-container {
+        max-width: 800px; /* Ancho máximo del contenedor de la descripción */
+        margin: 0 auto; /* Centra el contenedor horizontalmente */
+    }
+
+    .descripcion h2 {
+        font-size: 2.5rem; /* Tamaño del título */
+        color: #333; /* Color del texto */
+        margin-bottom: 20px; /* Espacio inferior del título */
+    }
+
+    .descripcion p {
+        font-size: 1.2rem; /* Tamaño del texto */
+        line-height: 1.6; /* Altura de línea */
+        color: #666; /* Color del texto */
+        margin-bottom: 20px; /* Espacio inferior del párrafo */
+    }
+
+    /* Estilos para el botón */
+    .descripcion button {
+        display: inline-block; /* Hace que el botón se muestre en línea */
+        padding: 10px 20px; /* Espaciado interno del botón */
+        background-color: #111111; /* Color de fondo del botón */
+        color: white; /* Color del texto del botón */
+        text-decoration: none; /* Quita la subrayado predeterminado */
+        border: none; /* Quita el borde del botón */
+        cursor: pointer; /* Cambia el cursor al pasar por encima */
+        transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+        margin-bottom: 20px;
+    }
+
+    .descripcion button:hover {
+        background-color: #683668; /* Cambia el color de fondo al pasar el cursor */
         .carousel {
             position: relative;
             width: 100%;
@@ -140,73 +204,30 @@
             color: #fff;
         }
 
-        /* Estilos para el header y footer */
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-        }
-        header nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-        header nav ul li {
-            margin: 0 10px;
-        }
-        header nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        header nav ul li a:hover {
-            text-decoration: none;
-        }
-        
-
-    </style>
 
 
-    <div class="carousel">
-        <div class="slide active">
-            <img src="./img/1faafc0c-db1f-4e68-b861-e5482b8c8ecf.jpeg" alt="Imagen 1">
-            <div class="caption">Descripción de la imagen 1</div>
-        </div>
-        <div class="slide">
-            <img src="./img/45895812-1043-4cec-a31e-6ba271a0561f.jpeg" alt="Imagen 2">
-            <div class="caption">Descripción de la imagen 2</div>
-        </div>
-        <div class="slide">
-            <img src="./img/4f8b731f-be53-49a3-9561-823a0bebead9.jpeg" alt="Imagen 3">
-            <div class="caption">Descripción de la imagen 3</div>
-        </div>
-        <div class="slide">
-            <img src="./img/6bb5f40de8ff4a10ffea1a3a4703897a.jpg" alt="Imagen 4">
-            <div class="caption">Descripción de la imagen 4</div>
-        </div>
-        <div class="slide">
-            <img src="./img/individual nyc.jpg" alt="Imagen 5">
-            <div class="caption">Descripción de la imagen 5</div>
-        </div>
-        <div class="buttons">
-            <button id="prev">Anterior</button>
-            <button id="next">Siguiente</button>
-        </div>
-    </div>
+
+    } </style>
+        </section>
+
+        <!-- Otras secciones de tu página -->
+    </main>
+
+
 
     <footer>
-        <div>
-            <a href="./quieroMiPrograma.html">#QUIEROMIPROGRAMA</a>
-            <a href="https://linktr.ee/csv_radio" target="_blank" title="Redes">REDES</a>
-            <a href="./contacto.html" target="_blank" title="Contactanos">CONTACTANOS</a>
-        </div>
         <div class="social-icons">
             <a href="https://www.youtube.com/@csvradioonline1501" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
             <a href="https://www.instagram.com/csv_radio" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://x.com/radio_csv" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://x.com/radio_csv" target="_blank" title="Twitter">
+                <img src="./img/x.jpg" alt="Twitter">
+              </a>
             <a href="https://www.facebook.com/somoscsvradio/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+     
+    <div class="button-container">
+        <a href=https://linktr.ee/csv_radio class="linktree-button"><img src="./img/linketree.png" alt="Linktree">
+        </a>
+    </div>
         </div>
     </footer>
 
@@ -267,3 +288,4 @@
     </script>
 </body>
 </html>
+

@@ -35,6 +35,7 @@
           <ul>
               <li> <a href="./radio_csv.html"  title="radio_csv">RADIO CSV</a>
               <li><a href="./acerca de nosotros.html">ACERCA DE </a></li>
+              <li><a href="./talleresycursos.html">TALLERES</a></li>
               <li><a href="./contacto.html">CONTACTO</a></li>
   </ul>
   </li>
@@ -45,38 +46,20 @@
         </a>
     </div>
 
-<!-- JavaScript para el menú dropdown -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var menuToggle = document.getElementById('menu-toggle');
-    var dropdownMenu = document.querySelector('.dropdown-menu');
-
-    menuToggle.addEventListener('click', function(event) {
-        event.preventDefault(); // Evita el comportamiento por defecto del enlace
-        dropdownMenu.classList.toggle('active');
-    });
-
-    // Cierra el menú si se hace clic fuera de él
-    document.addEventListener('click', function(event) {
-        if (!menuToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
-            dropdownMenu.classList.remove('active');
-        }
-    });
-    </script>
 </header>
         
     <div class="carousel">
         <div class="slide active">
             <img src="./img/sin sulfitos1.jpeg" alt="Imagen 1">
-            <div class="caption">PROGRAMAS DE VINOS</div> 
+            <div class="caption">Conducen: Guillermo Rochelle,Guillermo Quadrio y Fernando Maturana</div> 
         </div>
         <div class="slide">
             <img src="./img/sin sulfitos 2.jpeg" alt="Imagen 2">
-            <div class="caption">GUILLERMO ROCHELLE,GUILLERMO QUADRIO y FERNANDO MATURANA</div>
+            <div class="caption">Programa de Radio Online sobre vinos argentinos</div>
         </div>
         <div class="slide">
             <img src="./img/sin sulfitos 3.jpeg" alt="Imagen 3">
-            <div class="caption">CON LA PARTICIPACION DE PRODUCTORES NACIONALES</div>
+            <div class="caption">Miercoles 19 hs</div>
         </div>
        
         <div class="buttons">
@@ -95,10 +78,12 @@
                 <p>Haz clic en el botón para ser redirigido </p>
                 <button onclick="window.location.href='https://www.youtube.com/@SinSulfitosradio';">Sin SulFitos</button> 
             </div>
-            <div class="button-container">
-        <a href="https://linktr.ee/sinsulfitos" class="linktree-button"><img src="./img/linketree.png" alt="Linktree">
-        </a>
-    </div>
+          
+
+    <a href="https://linktr.ee/sinsulfitos" class="linktree-button">
+        <img src="./img/linketree.png" alt="Linktree" style="width: 80px; height: auto;">
+
+
         <style>
     main {
         padding-bottom: 60px; /* Espaciado inferior para separar del footer */

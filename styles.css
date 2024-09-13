@@ -1,7 +1,7 @@
 body{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
-  background-color: rgb(136, 141, 141);
+  background: linear-gradient(180deg, #000000, #3f3b77);
  align-items: center;
   border-bottom: 2px solid #ddd;
   box-sizing: border-box;
@@ -11,7 +11,7 @@ body{
 }
 
 header {
-  background: linear-gradient(135deg, #693767 0%, #d4c9c9 100%);
+  background: linear-gradient(135deg, #615f61 0%, #d4c9c9 100%);
 
   box-shadow: 0 4px 6px rgba(245, 15, 53, 0.1);
   display: flex;
@@ -59,40 +59,30 @@ header nav ul {
   text-decoration-color: #5c1e5c;
   }
   
-
-.social-icons {
-  display: flex;
-  gap: 15px;
-  position: center;
-  left: 20px; /* Ajusta según sea necesario */
+  .social-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center; /* Alinea verticalmente los íconos */
 }
 
 .social-icons a {
-  color: #ffffff;
-  font-size: 20px;
-}
-.button-container {
-  text-align: center;
-}
-
-.linktree-button {
-  display: inline-block;
-  width: 40px; /* Ajusta el tamaño para que coincida con tus otros iconos */
-  height: 40px; /* Ajusta el tamaño para que coincida con tus otros iconos */
+    color: #ffffff;
+    font-size: 20px;
+    display: flex;
+    align-items: center; /* Alinea verticalmente los contenidos */
 }
 
-.linktree-button img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%; /* Si tus iconos son redondos, mantenlo así */
-  transition: transform 0.3s ease;
+.social-icons a img {
+    width: 20px; /* Tamaño estándar para los íconos */
+    height: 20px;
+    object-fit: cover; /* Ajusta la imagen al tamaño del contenedor */
+    border-radius: 50%; /* Para íconos redondos */
+    transition: transform 0.3s ease;
 }
 
-.linktree-button:hover img {
-  transform: scale(1.1);
+.social-icons a:hover img {
+    transform: scale(1.1); /* Efecto de escala al pasar el mouse */
 }
-
 
 .search-bar {
   display: flex;
@@ -110,30 +100,42 @@ header nav ul {
 
 #search-results {
   margin-top: 10px;
-  background-color: #fff; /* Fondo blanco */
-  color: #000; /* Letras negras */
+  background-color: #ffffff; /* Fondo blanco */
+  color: #000000; /* Letras negras */
   padding: 10px;
-  border: 1px solid #ccc; /* Borde para distinguir el contenedor */
+  border: 2px solid #ccc; /* Borde para distinguir el contenedor */
   border-radius: 5px;
   max-width: 300px; /* Ajusta el ancho al tamaño del input */
   text-align: left;
+  font-size: 18px; /* Aumenta el tamaño del texto */
+  font-weight: bold; /* Aumenta el grosor de la fuente */
 }
 
 #search-results a {
   display: block;
-  padding: 5px 0;
+  padding: 2px 0;
   text-decoration: none;
-  color: #000;
+  color: #000000; /* Letras negras */
+  transition: background-color 0.1s ease; /* Suaviza la transición del fondo */
 }
 
 #search-results a:hover {
-  background-color: #f0f0f0; /* Fondo gris claro al pasar el cursor */
+  background-color: #ffffff; /* Fondo blanco al pasar el cursor */
+  color: #000000; /* Texto negro sobre el fondo blanco */
+}
+
+/* Estilo para resultados de búsqueda negativos (sin enlace) */
+#search-results .no-results {
+  color: #000000; /* Letras negras */
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .hidden {
   display: none; /* Clase para ocultar el contenedor */
 }
-
 .news-section {
   margin: 20px 0;
   text-align: center;
@@ -170,7 +172,7 @@ iframe {
 }
 .menu-fixed ul li a:hover{
   font-size: 1.4em; /* Aumenta el tamaño del texto */
-  color: #ff69b4; /* Mantén o ajusta el color si es necesario */
+  color: #080808; /* Mantén o ajusta el color si es necesario */
   transition: all 0.3s ease; /* Añade una transición suave para el cambio de tamaño */
   }
   
@@ -200,9 +202,8 @@ iframe {
 .menu-hamburg.active .line {
   background-color: #f5f2f2; /* Cambio de color al activar */
 }
-
 .dropdown-menu {
-  display: none;
+  display: none!important;
   position: absolute;
   top: calc(100% + 10px); /* Ajusta la posición debajo del menú hamburguesa */
   right: 0px; /* Alineación a la derecha */
@@ -237,12 +238,9 @@ iframe {
 
 /* Mostrar el menú desplegable cuando está activo */
 .dropdown-menu.active {
-  display: block;
+  display: block!important;
 
 }
-
-
-
 /* Estilo para el navbar */
 .navbar {
   display: flex;
@@ -263,7 +261,6 @@ iframe {
   gap: 15px;
 }
 
-        
 .carousel {
   position: relative;
   width: 100%;
@@ -317,7 +314,7 @@ iframe {
 .buttons button {
   background-color: #480e57;
   text-decoration: none;
-  color: #eee6e6;
+  color: #df00ec;
   font-weight: bold;
   border: none;
   padding: 10px;
@@ -338,7 +335,6 @@ iframe {
   color: #fff;
 }
 
-
 .text-section {
 display: flex;
 flex-direction: column;
@@ -347,202 +343,182 @@ justify-content: center;
 text-align: center;
 margin: 20px auto 100px; /* Agrega un margen inferior de 100px */
 }
-footer {
-margin-top: 100px; /* Asegura que el footer tenga suficiente margen superior */
+.container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  height: 100vh; /* Altura completa de la ventana */
+  position: relative; /* Necesario para el posicionamiento absoluto del contenedor de aplicaciones */
+}
+
+.side-screens {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espacio entre los elementos en columna */
 }
 
 
-
-
+/* Estilo del cubo */
 .video-cube {
-  width: 150px;
-  height: 150px;
-  perspective: 600px;
-  margin: 0 auto;
+  margin-left: 400px; /* Aumenta el valor para mover el cubo más a la derecha */
+  margin-right: 100px;
+  margin-bottom: 100px;
+  margin-top: 0px;
+  height: 157px;
+  width: 157px;
+  position: relative; 
 }
 
-
+/* Contenedor del cubo */
 .cube-container {
-  width: 100%;
+    width: 100%;
   height: 100%;
-  position: relative;
+  position: absolute;
 }
 
+/* Estilo del cubo y su animación */
 .cube {
   width: 100%;
   height: 100%;
-  position: relative;
+  position: absolute;
   transform-style: preserve-3d;
   transform: rotateX(0deg) rotateY(0deg);
-  animation: rotate 10s infinite linear;
-  
+  animation: rotate 15s infinite linear;
 }
 
+/* Estilo de las caras del cubo */
 .face {
-  position: absolute;
+    position: absolute;
   width: 100%;
   height: 100%;
   background: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #ccc;
   box-sizing: border-box;
 }
+
+/* Posicionamiento de las caras del cubo */
 .face.front { transform: translateZ(75px); }
 .face.back { transform: rotateY(180deg) translateZ(75px); }
 .face.left { transform: rotateY(-90deg) translateZ(75px); }
 .face.right { transform: rotateY(90deg) translateZ(75px); }
 .face.top { transform: rotateX(90deg) translateZ(75px); }
 .face.bottom { transform: rotateX(-90deg) translateZ(75px); }
-
+/* Animación de rotación del cubo */
 @keyframes rotate {
-  from { transform: rotateX(0deg) rotateY(0deg); }
+  from { transform: rotateX(0) rotateY(0); }
   to { transform: rotateX(360deg) rotateY(360deg); }
 }
 
-.cube:hover::after {
-  content: '';
-  position: absolute;
-  top: -30px; /* Ajusta según el tamaño del cursor */
-  left: -30px;
-  width: 60px; /* Ajusta según el tamaño del cursor */
-  height: 20px;
-  border-radius: 90%; /* Hacer la sombra circular */
-  box-shadow: 0 0 0 10px rgba(22, 20, 20, 0.5); /* Cambia el color aquí */
-  pointer-events: none; /* Permitir la interacción con el cubo */
-  z-index: 1000; /* Asegura que esté sobre el cubo */
-}
 
-
-.side-screens {
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 20px;
-}
-
-.screen {
-  width: calc(50% - 75px); /* Ajusta el ancho basado en el ancho del cubo */
-  text-align: center;
-  padding: 20px;
-  box-sizing: border-box;
-}
-.screen-left{
-margin-right: auto;
-margin-left: 20px;
-}
-.screen-right{
-  margin-right: 20px;
-  margin-left: auto;
-  }
-
+/* Estilo de los íconos de las apps */
 .youtube-icon {
-  font-size: 40px;
-  color: red;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.youtube-icon i {
-  margin-right: 8px;
-}
-.hero{
-  position: relative;
-  max-width: 100%;
-    padding: 20px;
 
-  width: 100%;
-  border-width: 100%;
-  
+  color: #ee0e0e;
+  font-size: 35px; /* Ajusta el tamaño del ícono */
+  text-decoration: none;
+  position: relative;
+  width: 120px; /* Ajusta según el tamaño deseado */
+  height: 120px; /* Ajusta según el tamaño deseado */
+  background: #f0ebeb; /* Fondo rojo para el ícono de YouTube */
+  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.6); /* Sombra más suave */
+  border-radius: 50%; /* Redondea los bordes para que sea circular */
+  text-align: center;
+  line-height: 120px; /* Centra el texto verticalmente */
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: #6d1a66;
-  color: #fff;
+  justify-content: center;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
 }
+
+.youtube-icon:hover {
+  transform: scale(1.1); /* Aumenta el tamaño ligeramente al pasar el mouse */
+  box-shadow: 0 8px 30px rgba(255, 0, 0, 0.8); /* Aumenta la sombra en el hover */
+}
+
+
+.app-icon{
+  margin-top: 0px;
+  margin-right: 0; /* Ajusta el margen según el ícono */
+  position: relative;
+  background: #262658; /* Fondo azul para el ícono de las apps */
+}
+/* Fondo de los íconos */
+
+.notification {
+  margin-top: 60px; /* Espacio entre el cubo y la notificación */
+  background-color: rgb(214, 153, 216);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  animation: blink 1s infinite;
+  z-index: 1; /* Asegura que la notificación esté en el flujo normal */
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+/* Animación de parpadeo */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.app-container {
+  position: absolute;
+  right: 15px; /* Ajusta según el espacio deseado entre las aplicaciones y el borde derecho */
+  top: 60%; /* Centra verticalmente en la ventana */
+  transform: translateY(-50%); /* Ajusta la posición vertical del contenedor de las aplicaciones */
+  display: flex; /* Establece el contenedor como flex */
+  flex-direction: column;
+  align-items: center; /* Centra los elementos horizontalmente */
+  gap: 10px; /* Espacio entre las aplicaciones */
+}
+
+/* Estilo de cada aplicación */
+  
+  .app {
+    background-color: #830fa7;
+    border: 2px solid #000; /* Marco más ancho */
+    padding: 12px; /* Ajusta el espacio interno */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: auto; /* Ajusta la altura automática según el contenido */
+    width: auto; /* Ajusta el ancho automático según el contenido */
+    animation: blink 3s infinite;
+  }
+  /* Asegúrate de que las imágenes no superen el contenedor */
+.app img {
+  max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+
+  .hero {
+  display: flex;
+  justify-content: space-between; /* Espacia los elementos a lo largo del contenedor */
+  align-items:center;           /* Alinea verticalmente los elementos */
+  height: 50vh;                  /* Altura reducida del hero */
+  background-color: #262658; /* Fondo para visibilidad */
+  color: #fff;
+  padding: 0 20px;               /* Espacio a los lados */
+}
+
+  
 
 .hero-content{
   max-width: 100%;
   width: 100%;
   border-width: 100%;
  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
+width: 100%;
   max-width: 100%;
-    padding: 20px;
+    padding: 10px;
 
 }
-.prefooter {
-  max-width: 100%;
-  width: 100%;
-  border-width: 100%;
-  
-  padding: 20px; /* Ajusta el relleno según sea necesario */
-  background-color:   background-color: rgb(136, 141, 141);; /* Cambia el color de fondo si es necesario */
-  color: #fff;
-  margin-bottom: 40px;
-  box-sizing: border-box;
-   /* Incluye el relleno y el borde en el cálculo del ancho */
-}
-
-.prefooter-content {
-  max-width: 100%;
-    padding: 20px;
-
-  width: 100%;
-  border-width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around; /* Distribuye el contenido de manera uniforme */
-  flex-wrap: wrap; /* Permite que el contenido se ajuste en varias líneas si es necesario */
-  width: 100%; /* Asegura que el contenido ocupe todo el ancho del prefooter */
-  box-sizing: border-box;
-  margin-bottom: 40px;
-}
-.prefooter-content img {
-  width: 300px; /* Tamaño fijo para las imágenes */
-  height: 300px; /* Tamaño fijo para las imágenes */
-  object-fit: cover; /* Mantiene la proporción de la imagen y recorta si es necesario */
-  border: 9px solid #1b0216; /* Marco blanco alrededor de las imágenes */
-  border-radius: 10px; /* Bordes redondeados para el marco */
-  transition: transform 0.3s ease; /* Transición suave para el efecto hover */
-  cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
-  margin: 10px; /* Espacio entre las imágenes */
-}
-
-.prefooter-content img:hover {
-  transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
-}
-@keyframes fadeInOut {
-  0% { opacity: 0; }
-  50% { opacity: 1; }
-  100% { opacity: 0; }
-}
-
-.hero p,  .prefooter p {
-  font-size: 1.2rem;
-  margin: 0;
-  width: 100%;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-
-
- p {
+p {
   font-family: 'Courier', monospace;
   font-size: 20px;
   text-shadow: 10px 10px 18px rgb(12, 11, 12);
@@ -570,7 +546,7 @@ h2 {
   font-size: 2rem;
   margin-bottom: 2rem;
   text-align: center;
-  text-shadow: 4px 4px 6px rgb(12, 11, 12);
+  text-shadow: 4px 4px 6px rgb(233, 223, 233)33)65);
   animation: blink 1s infinite;
 }
 
@@ -648,6 +624,37 @@ h2 {
   border-radius: 10px;
   padding: 10px 20px;
 }
+
+.light {
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-radius: 50%;
+  position: relative;
+  animation: glow 1s infinite alternate;
+}
+
+.light::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 12px solid white;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px 5px red;
+  }
+  100% {
+    box-shadow: none;
+  }
+}
 /* Ajuste para la posición del formulario de suscripción */
 
 
@@ -686,7 +693,7 @@ h2 {
 #subscription-form button {
   width: calc(100% - 20px); /* Asegura que el botón se alinee bien con los campos de entrada */
   padding: 8px;
-  background-color: #6fb8e9;
+  background-color: #484a4b;
   color: #fff;
   cursor: pointer;
   border: none;
@@ -694,7 +701,7 @@ h2 {
 }
 
 #subscription-form button:hover {
-  background-color: #5a9bdc;
+  background-color: #9e8493;
 }
 
 
@@ -728,7 +735,7 @@ h2 {
 
 #volumeIcon {
   margin-left: 10px;
-  color: #272424;
+  color: grey;
 }
 
 .contact-form h2 {
@@ -762,7 +769,7 @@ h2 {
 
 
 button:hover {
-  background-color: #6fb8e9;
+  background-color: #222324;
 }
 /* Estilo específico para esta sección */
 
@@ -770,45 +777,56 @@ button:hover {
 .three-columns {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 60px;
   margin-bottom: 80px;
+  margin-left: 30px;
   padding-bottom: 100px;
   max-width: 100%;
-    padding: 20px;
- 
+  padding: 20px;
   margin: 0 auto;
 }
 
 .three-columns > div {
   flex: 1;
-  min-width: 300px;
-  background-color: #a422be;
+  min-width: 100px;
+  background-color: #6c6a6d;
   border: 2px solid #ccc;
-  padding: 30px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 100px;
+  box-shadow: 2px 2px 5px rgba(194, 188, 188, 0.1);
   border-radius: 10px;
 }
 
 h3{
+  color: rgb(175, 156, 156);
   font-size: 2rem;
   margin-bottom: 2rem;
   text-align: center;
-  text-shadow: 4px 4px 6px rgb(106, 15, 106);
+  text-shadow: 4px 4px 6px rgb(240, 238, 240);
 
 }
 
 
-.gallery-container, .link-container {
+
+.gallery-container{
+ margin-left: 20px; 
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;/* Agrega un padding específico si es necesario */
+  padding: 20px;/* Agrega un padding específico si es necesario */
   gap: 20px; 
+  position: relative;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+
+
+
 }
 
-.gallery img, .link-container img {
-  width: 80%;
+.gallery img {
+  margin-top: 20px;
+  width: 60%;
   height: auto;
   max-height: 80%;
   object-fit: contain;
@@ -816,27 +834,12 @@ h3{
 
 
 
-
-
-.gallery-container {
-  position: relative;
-  overflow: hidden;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 .gallery {
   position: absolute;
   width: 100%;
   display: flex;
   animation: slide 8s infinite;
 }
-.gallery-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-
 
 @keyframes slide {
   0% {transform: translateX(0);}
@@ -845,11 +848,92 @@ h3{
   100% {transform: translateX(0);}
 }
 
+.link-container {
+  margin-left: 20px;
+  margin-top: auto;
+  margin-bottom: 40px;
+  background-image: linear-gradient(135deg, #333233 0%, #d4c9c9 100%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  max-width: 1200px;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.link-cube-container {
+  width: 200px;  /* Tamaño del cubo */
+  height: 200px;
+  position: relative;
+  perspective: 1000px; /* Añade perspectiva para el efecto 3D */
+}
+
+.link-cube {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: rotate 15s infinite linear; /* Animación de rotación */
+}
+
+.face {
+  position: absolute;
+  width: 200px;  /* Tamaño de cada cara igual al tamaño del cubo */
+  height: 200px;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.face img {
+  width: 100%; /* Asegura que las imágenes ocupen toda la cara */
+  height: 100%;
+  object-fit: cover;
+}
+
+.face.front { transform: translateZ(100px); }
+.face.back { transform: rotateY(180deg) translateZ(100px); }
+.face.left { transform: rotateY(-90deg) translateZ(100px); }
+.face.right { transform: rotateY(90deg) translateZ(100px); }
+.face.top { transform: rotateX(90deg) translateZ(100px); }
+.face.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+@keyframes rotate {
+  from { transform: rotateX(0) rotateY(0); }
+  to { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+
+/* Animación de parpadeo */
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.hero p{
+  font-size: 1.2rem;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 
   footer {
-    padding-top: 40px; /* Ajusta según sea necesario para la distancia con el cubo de videos */
-    
-    position: fixed;
+     position: fixed;
     left: 0;
     background-color: #413d3d;
     color: #fff;
@@ -859,12 +943,8 @@ h3{
     text-align: center;
     margin-top: 0; /* Elimina el margen superior del footer */
     left: 0;
-    bottom: 0;
-    width: 100%;
     max-width: 100%;
-    padding: 20px;
-
-  }
+ }
    .footer-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -936,3 +1016,19 @@ h3{
     color: #ccc;
   }
   
+  .g-recaptcha {
+    margin: 20px 0;
+    
+    
+    
+    @media (max-width: 768px) {
+      /* Estilos específicos para pantallas de celular */
+      .contenedor {
+          width: 100%;
+          padding: 10px;
+      }
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+}
