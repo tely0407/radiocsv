@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -389,3 +390,396 @@ setInterval(mostrarHoraBuenosAires, 1000);
 </body>
 </html>
 
+=======
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="CSV RADIO">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+      <!-- Estilos CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <link rel="stylesheet" href="styles.css">
+    
+   <!-- Lazy load script -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" defer></script>
+    
+   <!-- JavaScript -->
+   <script src="script.js" defer></script>
+   
+    
+    <!-- Título de la página -->
+    <title>CSV Radio</title>
+</head>
+<body>
+<!-- Header con menú hamburguesa y redes sociales -->
+<header>
+    <form id="search-form" class="search-bar">
+        <input type="text" id="search-input" placeholder="Buscar..." aria-label="Buscar">
+        <button type="submit">Buscar</button>
+    </form>
+    <div id="search-results" class="search-results"></div>
+
+
+<script>
+  document.getElementById('search-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const query = document.getElementById('search-input').value.toLowerCase();
+    const searchResults = document.getElementById('search-results');
+    searchResults.innerHTML = ''; // Limpiar resultados anteriores
+
+    const pages = [
+        { url: 'acerca-de.html', title: 'Acerca de nosotros' },
+        { url: 'contacto.html', title: 'Contacto' },
+        { url: 'pasionRacinguista.html', title: 'Pasión Racinguista' },
+        { url: 'presentePasado.html', title: 'Presente y Pasado' },
+        { url: 'tertuliaDeLosHacedores.html', title: 'Tertulia los Hacedores' },
+        { url: 'deTodoUnPoco.html', title: 'De Todo Un Poco' },
+        { url: 'miBuenosAiresQuerido.html', title: 'Mi Buenos Aires Querido' },
+        { url: 'motonoticias.html', title: 'Motonoticias' },
+        { url: 'programacion.html', title: 'Programacion' },
+        { url: 'sinSulfitos.html', title: 'Sin Sulfitos' },
+        { url: 'todoPorElTango.html', title: 'Todo Por El Tango' },
+        { url: 'quieroMiPrograma.html', title: 'Quiero Mi Programa' },
+        { url: 'programacion.html', title: 'Grilla' },
+    ];
+
+    let resultsFound = false;
+
+    pages.forEach(page => {
+        if (page.title.toLowerCase().includes(query)) {
+            const resultItem = document.createElement('div');
+            resultItem.innerHTML = `<a href="${page.url}">${page.title}</a>`;
+            searchResults.appendChild(resultItem);
+            resultsFound = true;
+        }
+    });
+
+    if (!resultsFound) {
+        searchResults.innerHTML = '<p>No se encontraron resultados.</p>';
+    }
+});
+</script>
+    
+    <div class="header-content">
+        <div class="social-icons">
+            <a href="https://www.youtube.com/@csvradioonline1501" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/csv_radio" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/radio_csv" target="_blank" title="Twitter">
+                <img src="./img/x.jpg" alt="Twitter">
+              </a>
+            <a href="https://www.facebook.com/somoscsvradio/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+     
+    <div class="button-container">
+        <a href=https://linktr.ee/csv_radio class="linktree-button"><img src="./img/linketree.png" alt="Linktree">
+        </a>
+    </div>
+        </div>
+        <nav class="menu-fixed">
+            <ul>
+                <li><a href="./acerca de nosotros.html">ACERCA DE </a></li>
+                <li><a href="./contacto.html">CONTACTO</a></li>
+                <li><a href="./talleresycursos.html"> TALLERES </a></li>
+                
+            </ul>
+            <div class="menu-hamburg" id="menu-toggle">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul class="dropdown-menu" id="dropdown-menu">
+                <li><a href="pasionRacinguista.html">Pasión Racinguista</a></li>
+                <li><a href="presentePasado.html">Presente y Pasado</a></li>
+                <li><a href="tertuliaDeLosHacedores.html">Tertulia los Hacedores</a></li>
+                <li><a href="sinSulfitos.html">Sin Sulfitos</a></li>
+                <li><a href="motonoticias.html">Motonoticias</a></li>
+                <li><a href="todoPorEl Tango.html">Todo por el Tango</a></li>
+                <li><a href="miBuenosAiresQuerido.html">Mi Buenos Aires Querido</a></li>
+                <li><a href="deTodoUnPoco.html">De todo un Poco</a></li>
+                <li><a href="algoParaDecir.html">Algo para decir</a></li>
+                <li><a href="programacion.html">Bajar Grilla</a></li>
+            </ul>
+        </nav>
+       
+        <a href="https://api.whatsapp.com/send?phone=5491162476703" class="btn-wsp" target="_blank" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+</header>
+
+<!-- JavaScript para el menú dropdown -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var menuToggle = document.getElementById('menu-toggle');
+    var dropdownMenu = document.getElementById('dropdown-menu');
+    var menuHamburg = document.getElementById('menu-toggle');
+
+    menuToggle.addEventListener('click', function(event) {
+        event.preventDefault(); // Evita el comportamiento por defecto del enlace
+        dropdownMenu.classList.toggle('active');
+        menuHamburg.classList.toggle('active'); // Agrega la clase 'active' al menú hamburguesa
+    });
+
+    // Cierra el menú si se hace clic fuera de él
+    document.addEventListener('click', function(event) {
+        if (!menuToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.classList.remove('active');
+            menuHamburg.classList.remove('active'); // Remueve la clase 'active' del menú hamburguesa
+        }
+    });
+});
+</script>
+<!-- Contenido principal -->
+<section>
+    
+    <p>LA RADIO DEL CENTRO CULTURAL Y BIBLIOTECA POPULAR DE LA BIBLIOTECA CARLOS SANCHEZ VIAMONTE</p>
+</div>
+</section>
+<section class="hero">
+    <div class="hero-content">
+        <div class="side-screens">
+            <div class="screen screen-left">
+                SEGUINOS POR:
+                <a href="https://www.youtube.com/@csvradioonline1501" class="youtube-icon" target="_blank">
+                    <i class="fab fa-youtube"></i> YouTube
+                </a>
+            </div>
+        </div>
+        
+          
+        <div class="video-cube">
+            <div class="cube-container">
+                <div class="cube">
+                    <div class="face front"><img src="img/layout.png" alt="Front"></div>
+                    <div class="face back"><img src="img/layout.png" alt="Back"></div>
+                    <div class="face left"><img src="img/layout.png" alt="Left"></div>
+                    <div class="face right"><img src="img/layout.png" alt="Right"></div>
+                    <div class="face top"><img src="img/layout.png" alt="Top"></div>
+                    <div class="face bottom"><img src="img/layout.png" alt="Bottom"></div>
+                </div>
+            </div>
+            <div class="notification">Presiona el cubo</div>
+        </div>
+        <!-- Nuevo elemento de audio agregado -->
+        <audio id="radioPlayer" src="https://argentina.republicahosting.com:2471/live"></audio>
+    </div>
+</section>
+
+<script>
+    document.querySelector('.video-cube').addEventListener('click', function() {
+        const audio = document.getElementById('radioPlayer'); // Asegúrate de usar el nuevo ID aquí
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+        console.log('El cubo fue tocado');
+    });
+</script>
+
+            <div class="side-screens">
+            <div class="screen screen-right">
+                BAJA LA APP
+                <div class="app-container">
+                   <div class="app" href="https://play.google.com/store/apps/details?id=com.app.csv_radio&hl=es_NI&gl=US&pli=1" target="_blank">
+                        <img src="./img/google app.png" alt="Google Play" style="height: 50px;">
+                    </div>
+                    <div class="app"href="https://apps.apple.com/us/app/idXXXXXXXXX" target="_blank"> <!-- Cambia XXXXXXXXX por el ID de tu app en el App Store -->
+                        <img src="./img/applestore.png" alt="Apple Store" style="height: 50px;">
+                    </div> </div>
+        </div>
+    </div>
+
+</section>
+<section class="news-section">
+    <h3>ULTIMAS NOTICIAS EN CNN</h3>
+    <iframe src="https://cnnespanol.cnn.com/seccion/cnn-radio-argentina/" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
+ </section>
+ <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    var storeLink = document.getElementById('store-link');
+                    var googleIcon = document.getElementById('google-icon');
+                    var appleIcon = document.getElementById('apple-icon');
+            
+                    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            
+                    if (/android/i.test(userAgent)) {
+                        // Usuario en Android
+                        storeLink.href = "https://play.google.com/store/apps/details?id=com.app.csv_radio&hl=es_NI&gl=US&pli=1";
+                        googleIcon.style.display = 'inline';
+                    } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                        // Usuario en iOS
+                        storeLink.href = "https://apps.apple.com/us/app/idXXXXXXXXX"; // Cambia XXXXXXXXX por el ID de tu app en el App Store
+                        appleIcon.style.display = 'inline';
+                    } else {
+                        // Otras plataformas (por ejemplo, desktop)
+                        storeLink.href = "https://play.google.com/store/apps/details?id=com.app.csv_radio&hl=es_NI&gl=US&pli=1";
+                        googleIcon.style.display = 'inline'; // Opción predeterminada
+                    }
+                });
+            </script>
+           <section>
+    <div class="radio-player-container">
+        <div class="radio-player">
+            <div class="radio-controls">
+                <button id="playPauseBtn" class="control-btn">
+                    
+                    <div class="light"></div>
+                </button>
+                <div id="timer" class="timer">00:00  </div>
+                
+                <div id="timer" class="timer">  CVS LIVE BROADCAST </div>
+                <input type="range" id="volumeControl" class="volume-slider" min="0" max="1" step="0.01" value="0.5">
+                <span id="volumeIcon">🔊</span>
+            </div>
+            <audio id="radioPlayer" src="https://argentina.republicahosting.com:2471/live"></audio>
+        </div>
+        <div class="subscription-container">
+            <!-- Formulario de suscripción -->
+            <form id="subscription-form" action="https://formspree.io/f/mqazdvrz" method="post">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <button type="submit">Suscribirse</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        const audio = document.getElementById('radioPlayer');  
+        const playPauseButton = document.getElementById('playPauseBtn');  
+        const playPauseIcon = document.getElementById('playPauseIcon');
+        const timer = document.getElementById('timer');  
+        const volumeControl = document.getElementById('volumeControl');  
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secondsPart = Math.floor(seconds % 60);
+            return `${minutes}:${secondsPart < 10 ? '0' : ''}${secondsPart}`;
+        }
+
+        audio.addEventListener('timeupdate', function() {  
+            timer.textContent = formatTime(audio.currentTime);  
+        });
+
+        playPauseButton.addEventListener('click', function() {  
+            if (audio.paused) {  
+                audio.play();  
+                playPauseIcon.textContent = '❚❚';  
+            } else {  
+                audio.pause();  
+                playPauseIcon.textContent = '▶️';  
+            }  
+        });
+
+        volumeControl.addEventListener('input', function() {
+            audio.volume = volumeControl.value;
+        });
+    </script>
+</section>
+
+  <section> 
+    <h2>Buenos Aires, Argentina: <span id="hora-buenos-aires"></span>, <span id="fecha-buenos-aires"></span></h2>
+    <script>
+       function mostrarHoraBuenosAires() {
+  const opcionesHora = { timeZone: 'America/Argentina/Buenos_Aires', hour: 'numeric', minute: 'numeric' };
+  const opcionesFecha = { timeZone: 'America/Argentina/Buenos_Aires', year: 'numeric', month: 'long', day: 'numeric' };
+
+  const formatterHora = new Intl.DateTimeFormat('es-AR', opcionesHora);
+  const formatterFecha = new Intl.DateTimeFormat('es-AR', opcionesFecha);
+
+  const horaActual = formatterHora.format(new Date());
+  const fechaActual = formatterFecha.format(new Date());
+
+  document.getElementById('hora-buenos-aires').textContent = horaActual;
+  document.getElementById('fecha-buenos-aires').textContent = fechaActual;
+}
+
+setInterval(mostrarHoraBuenosAires, 1000);
+
+      </script>
+          
+  
+        <div class="custom-padding">
+            <section class="three-columns">
+                <div class="gallery-container">
+                    <div class="gallery">
+                        <img src="img/programa1.png" alt="Imagen 1">
+                        <img src="img/programa2.png" alt="Imagen 2">
+                        <img src="img/programa3.png" alt="Imagen 3">
+                        <img src="img/radioxdentro (1).jpeg" alt="Imagen 4">
+                    
+                </div>
+                </div>
+               
+                <div class="gallery-container">
+                    <div class="gallery">
+                        <img src="img/radioxdentro (3).jpeg" alt="Imagen 1">
+                        <img src="img/radioxdentro (7).jpeg" alt="Imagen 2">
+                        <img src="img/radioxdentro (8).jpeg" alt="Imagen 3">
+                        <img src="img/radioxdentro (9).jpeg" alt="Imagen 4">
+                    
+                </div>
+                </div>
+                <div class="gallery-container">
+                    <div class="gallery">
+                        <img src="img/radioxdentro (3).jpeg" alt="Imagen 1">
+                        <img src="img/radioxdentro (7).jpeg" alt="Imagen 2">
+                        <img src="img/radioxdentro (8).jpeg" alt="Imagen 3">
+                        <img src="img/radioxdentro (9).jpeg" alt="Imagen 4">
+                    
+                </div>
+                </div>
+     </section>
+     <section class="prefooter">
+    <h2>Haz clic en el cubo para ser redirigido a la Biblioteca CSV</h2>
+    <div class="link-container">
+        <a href="http://www.carlossviamonte.com.ar/" target="_blank">
+            <div class="link-cube-container">
+                <div class="link-cube">
+                    <div class="face front"><img src="img/biblioteca.jpeg" alt="Front"></div>
+                    <div class="face back"><img src="img/biblioteca.jpeg" alt="Back"></div>
+                    <div class="face left"><img src="img/biblioteca.jpeg" alt="Left"></div>
+                    <div class="face right"><img src="img/biblioteca.jpeg" alt="Right"></div>
+                    <div class="face top"><img src="img/biblioteca.jpeg" alt="Top"></div>
+                    <div class="face bottom"><img src="img/biblioteca.jpeg" alt="Bottom"></div>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+
+    
+<footer>
+    
+    <div>
+        <!-- reCAPTCHA widget -->
+        <div class="g-recaptcha" data-sitekey="TU_CLAVE_DEL_SITIO"></div>
+            
+      <a href="./quieroMiPrograma.html">#QUIEROMIPROGRAMA</a>
+      <a href="https://linktr.ee/csv_radio" target="_blank" title="Redes">REDES</a>
+      <a href="./contacto.html" target="_blank" title="Contactanos">CONTACTANOS</a>
+    </div>
+    <div class="social-icons">
+        <a href="https://www.youtube.com/@csvradioonline1501" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/csv_radio" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/radio_csv" target="_blank" title="Twitter">
+            <img src="./img/x.jpg" alt="Twitter">
+          </a>
+        <a href="https://www.facebook.com/somoscsvradio/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+ 
+<div class="button-container">
+    <a href=https://linktr.ee/csv_radio class="linktree-button"><img src="./img/linketree.png" alt="Linktree">
+    </a>
+</div>
+    </div>
+</footer>
+</body>
+</html>
+
+>>>>>>> 70385513c39d82ad5230d1bbc4e83dd56985583f

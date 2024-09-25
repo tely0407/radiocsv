@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -300,3 +301,307 @@
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CSV RADIO">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Lazy load script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" defer></script>
+    
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+    
+    <!-- Título de la página -->
+    <title>CSV Radio</title>
+</head>
+<body>
+<!-- Header con menú hamburguesa y redes sociales -->
+<header>
+    <div class="social-icons">
+        <a href="https://www.youtube.com/@csvradioonline1501" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/csv_radio" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/radio_csv" target="_blank" title="Twitter">
+            <img src="./img/x.jpg" alt="Twitter">
+          </a>
+        <a href="https://www.facebook.com/somoscsvradio/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+ 
+<div class="button-container">
+    <a href=https://linktr.ee/csv_radio class="linktree-button"><img src="./img/linketree.png" alt="Linktree">
+    </a>
+</div>
+    </div>        <nav class="menu-fixed">
+            <ul>
+                <li><a href="./radio_csv.html" title="radio_csv">RADIO CSV</a></li>
+                <li><a href="./acerca de nosotros.html">ACERCA DE </a></li>
+                <li><a href="./contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+        <a href="https://api.whatsapp.com/send?phone=5491162476703" class="btn-wsp" target="_blank" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+</header>
+
+<div class="carousel">
+    <div class="slide active">
+        <img src="./img/1.png" alt="Imagen 1">
+        <div class="caption">LUNES</div>
+    </div>
+    <div class="slide">
+        <img src="./img/2.png" alt="Imagen 2">
+        <div class="caption">MARTES</div>
+    </div>
+    <div class="slide">
+        <img src="./img/3.png" alt="Imagen 3">
+        <div class="caption">MIERCOLES</div>
+    </div>
+    <div class="slide">
+        <img src="./img/4.png" alt="Imagen 4">
+        <div class="caption">JUEVES</div>
+    </div>
+    <div class="slide">
+        <img src="./img/5.png" alt="Imagen 5">
+        <div class="caption">VIERNES/SÁBADO</div>
+    </div>
+    <div class="slide">
+        <img src="./img/Conversación.png" alt="Imagen 6">
+        <div class="caption">Conversación de inglés</div>
+    </div>
+    <div class="slide">
+        <img src="./img/Dibujo.png" alt="Imagen 7">
+        <div class="caption">Dibujo para adultos</div>
+    </div>
+    <div class="slide">
+        <img src="./img/Mindfulness.png" alt="Imagen 8">
+        <div class="caption">Mindfulness</div>
+    </div>
+    <div class="slide">
+        <img src="./img/Elongación.png" alt="Imagen 9">
+        <div class="caption">Elongación</div>
+    </div>
+    <div class="slide">
+        <img src="./img/Entrenamiento.png" alt="Imagen 10">
+        <div class="caption">Entrenamiento cognitivo</div>
+    </div>
+    <div class="slide">
+        <img src="./img/Gimnasia.png" alt="Imagen 11">
+        <div class="caption">Gimnasia adultos mayores</div>
+    </div>
+    <div class="slide">
+        <img src="./img/Talleritaliano.png" alt="Imagen 12">
+        <div class="caption">Taller de italiano</div>
+    </div>
+    <div class="slide">
+        <img src="./img/Tallerliterario.png" alt="Imagen 13">
+        <div class="caption">Taller literario</div>
+    </div>
+    
+    <div class="buttons">
+        <button id="prev">Anterior</button>
+        <button id="next">Siguiente</button>
+    </div>
+</div>
+
+<!-- Contenido principal de la página -->
+<section class="descripcion">
+    <div class="descripcion-container">
+        <h2>TALLERES Y CURSOS</h2>
+        <h1>INFORMATE</h1>
+        <p>Haz clic en el botón para ser redirigido</p>
+        <button onclick="window.location.href='http://www.carlossviamonte.com.ar/2010/05/cursos-y-talleres-en-la-biblioteca.html';">CURSOS Y TALLERES</button>
+    </div>
+    <div class="button-container">
+        <a href="https://www.instagram.com/csv_radio" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+</section>
+
+<!-- Script para el carrusel -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const slides = document.querySelectorAll(".carousel .slide");
+        const prevButton = document.getElementById("prev");
+        const nextButton = document.getElementById("next");
+        let currentIndex = 0;
+
+        // Función para mostrar el slide actual
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove("active"));
+            slides[index].classList.add("active");
+        }
+
+        // Función para mostrar el siguiente slide
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        // Función para mostrar el slide anterior
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        // Event listeners para los botones
+        nextButton.addEventListener("click", nextSlide);
+        prevButton.addEventListener("click", prevSlide);
+    });
+</script>
+
+<style>
+    body{
+  
+
+  background-color: #A26BA6;
+    }
+    main {
+        padding-bottom: 60px; /* Espaciado inferior para separar del footer */
+    }
+
+    /* Estilos para la sección de descripción */
+    .descripcion {
+        background-color: #f3f3f3; /* Color de fondo de la sección */
+        padding: 40px; /* Espacio interno */
+        text-align: center; /* Alineación del texto */
+        margin-bottom: 20px; /* Espacio hacia abajo para separar del footer */
+    }
+
+    .descripcion-container {
+        max-width: 800px; /* Ancho máximo del contenedor de la descripción */
+        margin: 0 auto; /* Centra el contenedor horizontalmente */
+    }
+
+    .descripcion h2 {
+        font-size: 2.5rem; /* Tamaño del título */
+        color: #333; /* Color del texto */
+        margin-bottom: 20px; /* Espacio inferior del título */
+    }
+
+    .descripcion p {
+        font-size: 1.2rem; /* Tamaño del texto */
+        line-height: 1.6; /* Altura de línea */
+        color: #666; /* Color del texto */
+        margin-bottom: 20px; /* Espacio inferior del párrafo */
+    }
+
+        /* Estilos para el botón */
+        .descripcion button {
+            display: inline-block; /* Hace que el botón se muestre en línea */
+            padding: 10px 20px; /* Espaciado interno del botón */
+            background-color: #111111; /* Color de fondo del botón */
+            color: white; /* Color del texto del botón */
+            text-decoration: none; /* Quita la subrayado predeterminado */
+            border: none; /* Quita el borde del botón */
+            cursor: pointer; /* Cambia el cursor al pasar por encima */
+            transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+            margin-bottom: 20px;
+        }
+
+        .descripcion button:hover {
+            background-color: #683668; /* Cambia el color de fondo al pasar el cursor */
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Ancho máximo del carrusel */
+            margin: 0 auto; /* Centrado horizontal */
+            overflow: hidden; /* Oculta partes que sobresalgan */
+            border: 1px solid #ccc; /* Borde del carrusel */
+            border-radius: 8px; /* Borde redondeado */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            margin-bottom: 20px; /* Espaciado hacia abajo */
+        }
+
+        .carousel .slide {
+            display: none; /* Oculta todos los slides por defecto */
+            align-items: center; /* Alinea elementos verticalmente */
+            justify-content: center; /* Alinea elementos horizontalmente */
+            text-align: center; /* Alinea el texto al centro */
+            position: relative; /* Posición relativa para las imágenes */
+        }
+
+        .carousel .slide.active {
+            display: flex; /* Muestra el slide activo */
+        }
+
+        .carousel img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del carrusel */
+    height: 400px; /* Fija la altura de todas las imágenes */
+    object-fit: cover; /* Asegura que la imagen se recorte si es necesario para llenar el espacio */
+}
+
+
+
+
+
+        .carousel .caption {
+            position: absolute; /* Posiciona la leyenda de manera absoluta */
+            bottom: 10px; /* Alineación en la parte inferior */
+            left: 0; /* Alineación a la izquierda */
+            right: 0; /* Alineación a la derecha */
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+            color: white; /* Color del texto */
+            padding: 8px; /* Espaciado interno */
+            font-size: 14px; /* Tamaño de la fuente */
+        }
+
+        .carousel .buttons {
+            position: absolute; /* Posiciona los botones de navegación */
+            bottom: 10px; /* Alineación en la parte inferior */
+            width: 100%; /* Ancho completo */
+            display: flex; /* Usa flexbox para alinear */
+            justify-content: space-between; /* Espaciado entre los botones */
+        }
+
+        .carousel .buttons button {
+            background-color: #46064A; /* Color de fondo del botón */
+            color: white; /* Color del texto del botón */
+            border: none; /* Sin borde */
+            padding: 8px 16px; /* Espaciado interno */
+            cursor: pointer; /* Cursor apuntador */
+            outline: none; /* Sin contorno al hacer clic */
+            transition: background-color 0.3s; /* Transición suave del color */
+        }
+
+        .carousel .buttons button:hover {
+            background-color: #0056b3; /* Color de fondo al pasar el cursor */
+        }
+
+        footer {
+            margin-top: 300px;
+        }
+    </style>
+    <footer>
+        <div>
+            <a href="./quieroMiPrograma.html">#QUIEROMIPROGRAMA</a>
+            <a href="https://linktr.ee/csv_radio" target="_blank" title="Redes">REDES</a>
+            <a href="./contacto.html" target="_blank" title="Contactanos">CONTACTANOS</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.youtube.com/@csvradioonline1501" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/csv_radio" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/radio_csv" target="_blank" title="Twitter">
+                <img src="./img/x.jpg" alt="Twitter">
+              </a>
+            <a href="https://www.facebook.com/somoscsvradio/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+     
+    <div class="button-container">
+        <a href=https://linktr.ee/csv_radio class="linktree-button"><img src="./img/linketree.png" alt="Linktree">
+        </a>
+    </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+>>>>>>> 70385513c39d82ad5230d1bbc4e83dd56985583f
