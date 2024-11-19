@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="CSV RADIO">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    
+    
+    <!-- Lazy load script -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" defer></script>
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+    <!-- Título de la página -->
+    <title>CSV Radio</title>
+</head>
+<body>
+  
+<!-- Header con menú hamburguesa y redes sociales -->
+<header>
+    <div class="social-icons">
+        <a href="https://www.tiktok.com/@csvradio" target="_blank" title="tiktok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.youtube.com/@csvradioonline1501" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/csv_radio" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/csvradio_online?s=11" target="_blank" title="Twitter">
+            <img src="./img/x.jpg" alt="Twitter">
+        </a>
+        <a href="https://www.facebook.com/somoscsvradio/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <div class="button-container">
+            <a href="https://linktr.ee/csvradioonline" class="linktree-button"><img src="./img/linketree.png" alt="Linktree"></a>
+        </div>
+    </div>
+    <nav class="menu-fixed">
+        <ul>
+            <li><a href="./index.html">CSV RADIO</a></li>
+            <li><a href="./acerca de nosotros.html">NOSOTROS</a></li>
+            <li><a href="./contact.html">CONTACTO</a></li>
+            <li><a href="./programas.html">PROGRAMAS</a></li>
+            
+        </ul>  </header>
+        <style>
+            html, body {
+            
+                height: 100%;
+                margin: 0;
+                animation: gradienteVerde 10s infinite alternate;
+            background-size: 600% 600%;
+        }
+
+        /* Definir la animación de gradiente de fondo */
+        @keyframes gradienteVerde {
+            0% {
+                background: linear-gradient(45deg, #A8E6CF, #66BB6A, #388E3C, #2E7D32);
+            }
+            50% {
+                background: linear-gradient(45deg, #B2EBF2, #00C853, #00796B, #1B5E20);
+            }
+            100% {
+                background: linear-gradient(45deg, #C5E1A5, #81C784, #43A047, #33691E);
+            }
+        }
+            
+            .news-section {
+                margin-top: 60px;
+                height: 100%; /* Ocupar toda la altura */
+                display: flex;
+                flex-direction: column;
+            }
+            iframe {
+                flex-grow: 1; /* Hacer que el iframe ocupe el espacio restante */
+                border: none; /* Quitar el borde */
+            }
+            h3 {
+                text-align: center;
+                margin: 10px 0; /* Espaciado alrededor del título */
+            }
+        </style>
+    
+    
+            
+        </style><section class="news-section">
+    <h3>ULTIMAS NOTICIAS </h3>
+    <iframe src="https://www.infobae.com/?gad_source=1&gclid=CjwKCAjwg-24BhB_EiwA1ZOx8jVqGtirkInmGq5EIiNp7oqM-KVunA3XtQiIH6CLvXwNW8Ojh3forBoCDVYQAvD_B" width="100%" height="100%" allowfullscreen></iframe>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const apiKey = 'c317e668bdd8576edb0de59f12b51807';  // Clave de API de GNews
+        const apiUrl = `https://gnews.io/api/v4/top-headlines?lang=es&country=ar&apikey=${apiKey}`;
+
+        fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            const articles = data.articles.slice(0, 3);  // Tomar los primeros 3 artículos
+
+            articles.forEach((article, index) => {
+                const newsItem = document.getElementById('news' + (index + 1));
+                if (newsItem) {
+                    newsItem.innerHTML = `
+                        <h2>${article.title}</h2>
+                        <p>${article.description || 'No description available.'}</p>
+                        <a href="${article.url}" target="_blank">Leer más</a>
+                    `;
+                }
+            });
+        })
+        .catch(error => console.error('Error fetching news:', error));
+    });
+</script>
+
+
+    <footer>
+        <div>
+            <a href="./quieroMiPrograma.html">#QUIEROMIPROGRAMA</a>
+            <a href="https://linktr.ee/csvradioonline" target="_blank" title="Redes">REDES</a>
+            <a href="./contact.html" target="_blank" title="Contactanos">CONTACTANOS</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.tiktok.com/@csvradio" target="_blank" title="tiktok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@csvradioonline1501" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/csv_radio" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/csvradio_online?s=11" target="_blank" title="Twitter">
+                <img src="./img/x.jpg" alt="Twitter">
+            </a>
+            <a href="https://www.facebook.com/somoscsvradio/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <div class="button-container">
+                <a href="https://linktr.ee/csvradioonline" class="linktree-button"><img src="./img/linketree.png" alt="Linktree"></a>
+            </div>
+        </div>
+        <div class="footer-content">
+        <p>Austria 2154, C1425EGJ CABA</p>
+          </div>  
+    <p class="copyright">&copy; 2024 <a href="https://www.instagram.com/Pillpichakuna/" target="_blank">@Pillpichakuna</a></p>
+  </div>
+</footer>
+   
+</body>
+</html>

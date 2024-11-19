@@ -1,0 +1,322 @@
+<!-- Contenido principal -->
+<form id="search-form" class="search-bar">
+  <input
+    type="text"
+    id="search-input"
+    placeholder="Buscar..."
+    aria-label="Buscar"
+  />
+  <button type="submit">Buscar</button>
+</form>
+<div id="search-results" class="search-results"></div>
+
+<script>
+  // Ejemplo básico de búsqueda
+  const searchInput = document.getElementById("searchInput");
+  const searchResults = document.getElementById("searchResults");
+
+  searchInput.addEventListener("input", function () {
+    const searchText = searchInput.value.toLowerCase().trim();
+
+    // Ejemplo: Simular búsqueda y mostrar resultados
+    if (searchText.length > 0) {
+      const results = ["Resultado 1", "Resultado 2", "Resultado 3"]; // Simulación de resultados
+
+      const filteredResults = results.filter((result) =>
+        result.toLowerCase().includes(searchText)
+      );
+
+      renderResults(filteredResults); // Función para renderizar resultados (debes implementarla)
+    } else {
+      searchResults.innerHTML = ""; // Limpiar resultados si no hay texto de búsqueda
+    }
+  });
+
+  function renderResults(results) {
+    searchResults.innerHTML = "";
+
+    results.forEach((result) => {
+      const resultElement = document.createElement("div");
+      resultElement.textContent = result;
+      searchResults.appendChild(resultElement);
+    });
+  }
+</script>
+<style>
+  @media (max-width: 600px) {
+    .search-bar {
+      flex-direction: column; /* En pantallas pequeñas, poner uno debajo del otro */
+      align-items: stretch; /* Asegura que ambos ocupen el ancho completo */
+    }
+
+    .search-results {
+      width: 100%; /* Que ocupe todo el ancho disponible */
+    }
+  }
+
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    width: 90%; /* Asegura que la barra de búsqueda ocupe un buen ancho en móvil */
+    margin-bottom: 10px;
+    gap: 10px; /* Espacio entre la barra de búsqueda y los resultados */
+    flex: 1; /* La barra de búsqueda puede ocupar más espacio si lo deseas */
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  #search-input {
+    padding: 10px;
+    width: 200px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  #search-results {
+    margin-top: 10px;
+    background-color: #ffffff; /* Fondo blanco */
+    color: #000000; /* Letras negras */
+    padding: 10px;
+    border: 2px solid #ccc; /* Borde para distinguir el contenedor */
+    border-radius: 5px;
+    max-width: 40px; /* Ajusta el ancho al tamaño del input */
+    text-align: right;
+    font-size: 14px; /* Aumenta el tamaño del texto */
+    font-weight: bold; /* Aumenta el grosor de la fuente */
+    flex: 1; /* Los resultados también se ajustan según el contenido */
+    padding: 10px;
+    min-width: 200px; /* Establece un ancho mínimo para los resultados */
+  }
+
+  #search-results a {
+    display: block;
+    padding: 2px 0;
+    text-decoration: none;
+    color: #000000; /* Letras negras */
+    transition: background-color 0.1s ease; /* Suaviza la transición del fondo */
+  }
+
+  #search-results a:hover {
+    background-color: #ffffff; /* Fondo blanco al pasar el cursor */
+    color: #000000; /* Texto negro sobre el fondo blanco */
+  }
+
+  /* Estilo para resultados de búsqueda negativos (sin enlace) */
+  #search-results .no-results {
+    color: #000000; /* Letras negras */
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+  }
+</style>
+
+<!-- Contenido principal -->
+<form id="search-form" class="search-bar">
+  <input
+    type="text"
+    id="search-input"
+    placeholder="Buscar..."
+    aria-label="Buscar"
+  />
+  <button type="submit">Buscar</button>
+</form>
+<div id="search-results" class="search-results"></div>
+
+.search-bar { display: flex; justify-content: center; margin: 20px 0; width:
+90%; /* Asegura que la barra de búsqueda ocupe un buen ancho en móvil */
+margin-bottom: 10px; } #search-input { padding: 10px; width: 300px; font-size:
+16px; border: 1px solid #ccc; border-radius: 5px; } #search-results {
+margin-top: 10px; background-color: #ffffff; /* Fondo blanco */ color: #000000;
+/* Letras negras */ padding: 10px; border: 2px solid #ccc; /* Borde para
+distinguir el contenedor */ border-radius: 5px; max-width: 300px; /* Ajusta el
+ancho al tamaño del input */ text-align: left; font-size: 18px; /* Aumenta el
+tamaño del texto */ font-weight: bold; /* Aumenta el grosor de la fuente */ }
+#search-results a { display: block; padding: 2px 0; text-decoration: none;
+color: #000000; /* Letras negras */ transition: background-color 0.1s ease; /*
+Suaviza la transición del fondo */ } #search-results a:hover { background-color:
+#ffffff; /* Fondo blanco al pasar el cursor */ color: #000000; /* Texto negro
+sobre el fondo blanco */ } /* Estilo para resultados de búsqueda negativos (sin
+enlace) */ #search-results .no-results { color: #000000; /* Letras negras */
+background-color: #ffffff; /* Fondo blanco */ padding: 10px 0; font-size: 18px;
+font-weight: bold; } /////media@media only screen and (max-width:480px){
+.footer-container{ padding:15px; } social-icons{ gap:5px; } } @media only screen
+and (max-width:768px){ .footer-container{ padding:20px; flex-direction: column;
+max-width: 100%; width: 100%; } social-icons{ justify-content: center;
+margin-bottom: 20px; } body{ font-size:14px } } @media only screen and
+(max-width:768px){ .dropdown-menu{ position:static; width:100%; display:block; }
+.nav-menu{ flex-direction:column; width:100%; } .nav-menu li{ text-align:center;
+} .dropdown-menu li{ padding:15px; } } @media only screen and (max-width:768px){
+.header{ padding:10px; } .header-container{ padding:5px; flex-direction: column;
+max-width: 100%; width: 100%; } social-icons{ justify-content: center;
+margin-bottom: 20px; } menu-fixed ul li a{ font-size:12px; width: 100%;}
+.news-section iframe{ height: auto; } } @media only screen and
+(max-width:768px){ .text-section{ font-size:12px; width: 100%; }} /* Estilo del
+cubo para pantallas pequeñas */ @media (max-width: 768px) { .video-cube {
+margin-left: auto; /* Centra el cubo horizontalmente */ margin-right: auto;
+margin-bottom: 20px; /* Reduce el espacio inferior */ margin-top: 20px; /*
+Ajusta el espacio superior */ } @media (max-width: 768px) { .link-cube{
+margin-left: auto; /* Centra el cubo horizontalmente */ margin-right: auto;
+margin-bottom: 20px; /* Reduce el espacio inferior */ margin-top: 20px; /*
+Ajusta el espacio superior */ }} @media (max-width: 768px) { .hero-content{
+padding:10px; flex-direction: column; max-width: 100%; width: 100%; }} @media
+(max-width: 768px) { .content-wrapper { flex-direction: column; /* En móviles,
+apila YouTube sobre las apps */ align-items: center; } .app-container {
+align-items: center; /* Centra las apps en móviles */ margin-right: 0; margin:
+10px 0; width: 100%; text-align: center; /* Centra ambos elementos en móviles */
+gap:5px; } } @media (max-width: 768px) { .youtube-icon { width: 80px; /* Ajusta
+el tamaño del círculo en pantallas pequeñas */ height: 80px; /* Mantén la altura
+igual al ancho para conservar la forma */ font-size: 18px; /* Ajusta el tamaño
+del texto */ line-height: 80px; /* Centra el texto verticalmente en el nuevo
+tamaño */ margin-botton:10px; } .youtube-icon i { font-size: 20px; /* Ajusta el
+tamaño del ícono de YouTube en pantallas pequeñas */ margin-right: 5px; /*
+Reduce el espacio entre ícono y texto */ } } // Ajusta el include_path
+ini_set("include_path", '/home/csvradiorepublic/php:' . ini_get("include_path")
+);
+
+
+<section class="news-section">
+    
+    <h3>ULTIMAS NOTICIAS EN CNN</h3>
+    <iframe src="https://cnnespanol.cnn.com/seccion/cnn-radio-argentina/" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
+ </section>
+ <section><div></div>
+    </section>
+    
+.news-section {
+  margin: 20px 0;
+  text-align: center;
+}
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+.news-section iframe {
+  border: none;
+  width: 100%;
+  height: 600px;
+}
+.news-section{
+  width: 100%;            /* Ocupa el 100% del ancho */
+  height: auto;          /* Cambiar a auto para que la altura sea ajustable */
+  min-height: 20vh;      /* Altura mínima, puedes ajustarla según lo que necesites */
+  margin-bottom: 10px;   
+  margin-top: 10px; /* Reduce este valor también si es necesario */
+  padding: 20px;        /* Espacio interno alrededor del contenido */
+  overflow: hidden;     /* Evita que el contenido exceda la sección */
+  display: flex;                    /* Usar flexbox */
+  flex-direction: column;          /* Colocar elementos en columna */
+  justify-content: center;          /* Centrar verticalmente */
+  align-items: center;   
+  background-color:#776b6b;           /* Centrar horizontalmente */
+
+  
+}
+
+
+
+//noticias
+document.addEventListener("DOMContentLoaded", function() {
+    const apiKey = 'c317e668bdd8576edb0de59f12b51807';  // Clave de API de GNews
+    const apiUrl = `https://gnews.io/api/v4/top-headlines?lang=es&country=ar&apikey=${apiKey}`;
+
+    fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);  // Verifica la estructura de los datos
+        const articles = data.articles.slice(0, 3);  // Tomar los primeros 3 artículos
+
+        articles.forEach((article, index) => {
+            const newsItem = document.getElementById('news' + (index + 1));
+            if (newsItem) {  // Asegúrate de que el elemento exista antes de manipularlo
+                newsItem.innerHTML = `
+                    <h2>${article.title}</h2>
+                    <p>${article.description || 'No description available.'}</p>
+                    <a href="${article.url}" target="_blank">Leer más</a>
+                `;
+            }
+        });
+    })
+    .catch(error => console.error('Error fetching news:', error));
+});
+
+// popup
+
+
+
+.popup {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  z-index: 1;
+  right: 20px; /* Coloca el pop-up a la derecha */
+  top: 20px;   /* Coloca el pop-up un poco abajo */
+  width: auto; /* Ajusta automáticamente el ancho */
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 10px 15px; /* Espaciado más pequeño */
+  border: 1px solid #888;
+  border-radius: 5px; /* Bordes redondeados */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+}
+
+<div id="popup" class="popup">
+  <div class="popup-content">
+      <span class="close" id="closePopup">&times;</span>
+      <p id="programMessage"></p>
+  </div>
+</div>
+
+<script>
+  window.onload = function() {
+      const popup = document.getElementById("popup");
+      const closePopup = document.getElementById("closePopup");
+      const programMessage = document.getElementById("programMessage");
+
+      const days = [
+          "Domingo: Descanso",
+          "Lunes: Los Hermanos del Plata 18 Hs y Pasión Racinguista 20 Hs",
+          "Martes: Tertulia de los Hacedoros 17 Hs y Presente y Pasado 18 Hs",
+          "Miércoles: Sin Sulfitos 19 Hs y Motonoticias 20 Hs",
+          "Jueves: Todo por el Tango 15 Hs y Mi Buenos Aires Querido 17 Hs",
+          "Viernes: De Todo un Poco 16 Hs y Algo para Decir 18 Hs",
+          "Sábado: Actividades recreativas"
+      ];
+
+      const today = new Date();
+      const dayIndex = today.getDay(); // 0 es Domingo, 1 es Lunes, etc.
+
+      programMessage.textContent = days[dayIndex];
+
+      popup.style.display = "block";
+
+      closePopup.onclick = function() {
+          popup.style.display = "none";
+      }
+
+      // Asegúrate de que la función de cerrar funcione correctamente
+      window.onclick = function(event) {
+          if (event.target === popup) {
+              popup.style.display = "none";
+          }
+      }
+  };
+</script>
