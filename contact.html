@@ -17,7 +17,45 @@
    <!-- JavaScript -->
    <script src="script.js" defer></script>
    
-    
+</head>
+ <body>
+ 
+   <div class="cursor-follower" id="follower"></div>
+ 
+   <script>
+     const follower = document.getElementById("follower");
+     let mouseX = 0;
+     let mouseY = 0;
+     let followerX = 0;
+     let followerY = 0;
+     
+     let delayStarted = false;
+ 
+     document.addEventListener("mousemove", (e) => {
+       mouseX = e.clientX;
+       mouseY = e.clientY;
+ 
+       if (!delayStarted) {
+         delayStarted = true;
+         setTimeout(() => {
+           follower.style.display = "block";
+         }, 1000); // 1 segundos de delay
+       }
+     });
+ 
+     function animate() {
+       followerX += (mouseX - followerX) * 0.1;
+       followerY += (mouseY - followerY) * 0.1;
+ 
+       follower.style.left = followerX + "px";
+       follower.style.top = followerY + "px";
+ 
+       requestAnimationFrame(animate);
+     }
+ 
+     animate();
+   </script>
+   
     <!-- Título de la página -->
     <title>CSV Radio</title>
 </head>
@@ -38,24 +76,17 @@
 </div>
   
 <nav class="menu-fixed">
-        <ul>
-            <li><a href="./index.html">RADIO CSV</a></li>
-            <li><a href="./acerca de nosotros.html">NOSOTROS </a></li>
-            <li><a href="./programas.html">PROGRAMAS</a></li>
-            
-        </ul>
-            
-              </li>
-              
-    </nav>
-  
-        
-       
-        <a href="https://api.whatsapp.com/send?phone=5491162476703" class="btn-wsp" target="_blank" title="WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
+    <ul>
+        <li><a href="./index.html">RADIO CSV</a></li>
+        <li><a href="./nosotros.html">NOSOTROS </a></li>
+        <li><a href="./programas.html">PROGRAMAS</a></li>
+        </ul></li>
+</nav><a href="https://api.whatsapp.com/send?phone=5491162476703" class="btn-wsp" target="_blank" title="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</div>
 </header>
+
 
   <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="contacto.php" method="post">
     <fieldset id="fs-frm-inputs">
@@ -76,107 +107,168 @@
     <input type="submit" value="Enviar">
 </form>
 <style>
-    body { 
-            background-image: url('./img/radioxdentro\ \(9\).jpeg');
-            background-size: cover; /* Hace que la imagen cubra todo el fondo */
-            background-position: center; /* Centra la imagen en la pantalla */
-            background-repeat: no-repeat; /* Evita que la imagen se repita */
-        }
+    /* El círculo celeste */
+    .cursor-follower {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(173, 216, 230, 0.5); /* Celeste pálido */
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      display: none;
+    }
+
+    body {
+        background-image: url('./img/radioxdentro\ \(9\).jpeg');
+        background-size: cover; /* Hace que la imagen cubra todo el fondo */
+        background-position: center; /* Centra la imagen en la pantalla */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+        margin: 0;
+        padding: 0;
+        cursor: pointer; /* Mano como cursor */
+        overflow: auto;
+    }
+
     form {
-    margin-top: 100px;
-  margin-bottom: 60px; /* Espacio adicional para separar el formulario del footer */
-}
-form {
-  
-  background-color: #fff;
-  padding: 100px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
-  margin: 50px auto;
-  color: #000;
-}
+        background-color: #fff;
+        padding: 30px; /* Reduje el padding */
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        margin: 50px auto;
+        color: #000;
+    }
 
-form h2 {
-  text-align: center;
-  color: #6d1a66;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
+    form h2 {
+        text-align: center;
+        color: #6d1a66;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
 
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-size: 16px;
-}
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
 
-input[type="submit"] {
-  width: 100%;
-  background-color: #6d1a66;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
+    input[type="submit"] {
+        width: 100%;
+        background-color: #34495e;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
 
-input[type="submit"]:hover {
-  background-color: #5c1e5c;
-}
+    input[type="submit"]:hover {
+        background-color: #5c1e5c;
+    }
 
-textarea {
-  height: 150px;
-  resize: none;
-}
+    textarea {
+        height: 150px;
+        resize: none;
+    }
 
-input[type="checkbox"] {
-  margin-right: 10px;
-}
+    input[type="checkbox"] {
+        margin-right: 10px;
+    }
 
-label {
-  font-size: 16px;
-  color: #000;
-}
+    label {
+        font-size: 16px;
+        color: #000;
+    }
 
-.form-group {
-  margin-bottom: 15px;
-}
+    .form-group {
+        margin-bottom: 15px;
+    }
 
-.error {
-  color: red;
-  font-size: 14px;
-  margin-top: -10px;
-  margin-bottom: 10px;
-}
+    .error {
+        color: red;
+        font-size: 14px;
+        margin-top: -10px;
+        margin-bottom: 10px;
+    }
 
-.success {
-  color: green;
-  font-size: 16px;
-  margin-top: -10px;
-  margin-bottom: 10px;
-}
-.custom-padding{
- padding: 80px;
-}
+    .success {
+        color: green;
+        font-size: 16px;
+        margin-top: -10px;
+        margin-bottom: 10px;
+    }
+
+    .custom-padding {
+        padding: 80px;
+    }
+
+    /* Ajustes para pantallas pequeñas */
+    @media (max-width: 768px) {
+        form {
+            padding: 20px; /* Menos padding en pantallas pequeñas */
+            margin: 20px; /* Reducir margen */
+            max-width: 90%; /* Aumentar el ancho máximo en pantallas pequeñas */
+        }
+
+        form h2 {
+            font-size: 20px; /* Reducir el tamaño de la fuente del título */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            font-size: 14px; /* Reducir tamaño de la fuente */
+            padding: 10px; /* Reducir padding */
+        }
+
+        input[type="submit"] {
+            font-size: 16px; /* Reducir el tamaño de la fuente del botón */
+            padding: 12px; /* Reducir padding */
+        }
+
+        .error,
+        .success {
+            font-size: 12px; /* Reducir el tamaño de la fuente de los mensajes de error y éxito */
+        }
+
+        header {
+          padding: 20px;
+          flex-direction: column;
+          align-items: center;
+        }
+      
+        .header-content {
+          position: relative;
+          flex-direction: column;
+          align-items: center;
+          padding: 10px;
+        }
+        .btn-wsp {
+            bottom: 40px;
+            right: 25px;
+            font-size: 1.2rem;
+            padding: 6px;
+          }
+        /* Ajustar los íconos sociales */
+    } /* <- ESTA LLAVE FALTABA */
+</style>
 
 
-
-footer {
-  margin-top: 50px; /* Espacio entre el footer y el formulario */
-}
-
-    </style>
     <script>
         function showConfirmation() {
             alert("Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.");
@@ -196,22 +288,25 @@ footer {
           
         </div>
         
- <div class="footer-content">
-  <p>CSV RADIO</p>
-  <p>Austria 2154, C1425EGJ CABA</p>
-</div>
-<div class="social-icons">
-  <a href="https://www.tiktok.com/@csvradio" target="_blank" title="tiktok"><i class="fab fa-tiktok"></i></a>
-  <a href="https://www.youtube.com/@csvradioonline1501" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-  <a href="https://www.instagram.com/csv_radio" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-  <a href="https://x.com/csvradio_online?s=11" target="_blank" title="Twitter">
-      <img src="./img/x.jpg" alt="Twitter">
-  </a>
-  <a href="https://www.facebook.com/somoscsvradio/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-  <div class="button-container">
-      <a href="https://linktr.ee/csvradioonline" class="linktree-button"><img src="./img/linketree.png" alt="Linktree"></a>
-  </div>
-</div>
-    </footer>
-     </body>
-     </html>
+        <footer>
+            <div>
+              <a href="./quieroMiPrograma.html">#QUIEROMIPROGRAMA</a>
+              <a href="https://linktr.ee/csvradioonline" target="_blank" title="Redes">REDES</a>
+            </div>
+          
+            <div class="footer-content">
+              <p>CSV RADIO</p>
+              <p>Austria 2154, C1425EGJ CABA</p>
+            </div>
+          
+            <div class="social-icons">
+              <a href="https://www.tiktok.com/@csvradio" target="_blank" title="tiktok"><i class="fab fa-tiktok"></i></a>
+              <a href="https://www.youtube.com/@csvradioonline1501" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+              <a href="https://www.instagram.com/csv_radio" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://x.com/csvradio_online?s=11" target="_blank" title="Twitter"><img src="./img/x.jpg" alt="Twitter"></a>
+              <a href="https://www.facebook.com/somoscsvradio/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://linktr.ee/csvradioonline" class="linktree-button" target="_blank">
+                <img src="./img/linketree.png" alt="Linktree">
+              </a>
+            </div>
+          </footer></body></html>

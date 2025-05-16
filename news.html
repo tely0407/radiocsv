@@ -19,6 +19,46 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" defer></script>
     <!-- JavaScript -->
     <script src="script.js" defer></script>
+    <title>Cursor con efecto</title>
+  
+</head>
+<body>
+
+  <div class="cursor-follower" id="follower"></div>
+
+  <script>
+    const follower = document.getElementById("follower");
+    let mouseX = 0;
+    let mouseY = 0;
+    let followerX = 0;
+    let followerY = 0;
+    let delayStarted = false;
+
+    document.addEventListener("mousemove", (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+
+      if (!delayStarted) {
+        delayStarted = true;
+        setTimeout(() => {
+          follower.style.display = "block";
+        }, 1000); // 1 segundos de delay
+      }
+    });
+
+    function animate() {
+      followerX += (mouseX - followerX) * 0.1;
+      followerY += (mouseY - followerY) * 0.1;
+
+      follower.style.left = followerX + "px";
+      follower.style.top = followerY + "px";
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+  
     <!-- Título de la página -->
     <title>CSV Radio</title>
 </head>
@@ -47,12 +87,34 @@
             
         </ul>  </header>
         <style>
+        body {
+                  margin: 0;
+                  padding: 0;
+                  cursor: pointer; /* Mano como cursor */
+                  overflow: auto;
+                }
+            
+                /* El círculo celeste */
+                .cursor-follower {
+                  position: fixed;
+                  top: 0;
+                  left: 0;
+                  width: 40px;
+                  height: 40px;
+                  background-color: rgba(173, 216, 230, 0.5); /* Celeste pálido */
+                  border-radius: 50%;
+                  pointer-events: none;
+                  transform: translate(-50%, -50%);
+                  z-index: 9999;
+                  display: none;
+                }
+              
             html, body {
+    
             
                 height: 100%;
                 margin: 0;
-                animation: gradienteVerde 10s infinite alternate;
-            background-size: 600% 600%;
+               background-color:  #1e1e2e;
         }
 
         /* Definir la animación de gradiente de fondo */
@@ -67,8 +129,10 @@
                 background: linear-gradient(45deg, #C5E1A5, #81C784, #43A047, #33691E);
             }
         }
-            
+          
+          
             .news-section {
+              background-color:  #1e1e2e;
                 margin-top: 60px;
                 height: 100%; /* Ocupar toda la altura */
                 display: flex;
@@ -82,12 +146,56 @@
                 text-align: center;
                 margin: 10px 0; /* Espaciado alrededor del título */
             }
-        </style>
-    
-    
-            
-        </style><section class="news-section">
-    <h3>ULTIMAS NOTICIAS </h3>
+           /* Estilo para el menú fijo en pantallas pequeñas */
+           @media (max-width: 768px) {
+            .menu-fixed {
+              top: 0;
+              left: 0;
+              width: 100%;
+              background: linear-gradient(90deg, #90cbdb, #8e93d6, #2831a7, #072d6b);
+              background-size: 300% 100%;
+              animation: soundWave 5s infinite linear;
+              z-index: 9999;
+              padding: 0; /* Quitamos padding vertical para que no se separe de más */
+            }
+          
+            .menu-fixed ul {
+              display: flex;
+              flex-direction: column; /* Ítems uno debajo del otro */
+              align-items: flex-start;
+              justify-content: flex-start;
+              list-style: none;
+              margin: 0;
+              padding: 0;
+              width: 100%;
+              gap: 0; /* Elimina separación entre ítems */
+            }
+          
+            .menu-fixed ul li {
+              width: 100%;
+              margin: 0;
+              padding: 0;
+            }
+          
+            .menu-fixed ul li a {
+              display: block;
+              width: 100%;
+              padding: 8px 10px;
+              font-size: 14px;
+              text-align: left;
+              color: white;
+              text-decoration: none;
+              border-bottom: 1px solid #ffffff33; /* Línea divisoria opcional */
+            }
+          
+            .menu-fixed ul li a:hover {
+              background-color: #5c1e5c;
+            }
+          }
+                        </style>
+              
+        <section class="news-section">
+    <h3>ULTIMAS <NOTICIAS> </h3>
     <iframe src="https://www.infobae.com/?gad_source=1&gclid=CjwKCAjwg-24BhB_EiwA1ZOx8jVqGtirkInmGq5EIiNp7oqM-KVunA3XtQiIH6CLvXwNW8Ojh3forBoCDVYQAvD_B" width="100%" height="100%" allowfullscreen></iframe>
 </section>
 

@@ -18,7 +18,68 @@
    <!-- JavaScript -->
    <script src="./script.js" defer></script>
    
-    
+   <title>Cursor con efecto</title>
+   <style>
+     body {
+       margin: 0;
+       padding: 0;
+       cursor: pointer; /* Mano como cursor */
+       overflow: auto;
+     }
+ 
+     /* El círculo celeste */
+     .cursor-follower {
+       position: fixed;
+       top: 0;
+       left: 0;
+       width: 40px;
+       height: 40px;
+       background-color: rgba(173, 216, 230, 0.5); /* Celeste pálido */
+       border-radius: 50%;
+       pointer-events: none;
+       transform: translate(-50%, -50%);
+       z-index: 9999;
+       display: none;
+     }
+   </style>
+ </head>
+ <body>
+ 
+   <div class="cursor-follower" id="follower"></div>
+ 
+   <script>
+     const follower = document.getElementById("follower");
+     let mouseX = 0;
+     let mouseY = 0;
+     let followerX = 0;
+     let followerY = 0;
+     let delayStarted = false;
+ 
+     document.addEventListener("mousemove", (e) => {
+       mouseX = e.clientX;
+       mouseY = e.clientY;
+ 
+       if (!delayStarted) {
+         delayStarted = true;
+         setTimeout(() => {
+           follower.style.display = "block";
+         }, 1000); // 1 segundos de delay
+       }
+     });
+ 
+     function animate() {
+       followerX += (mouseX - followerX) * 0.1;
+       followerY += (mouseY - followerY) * 0.1;
+ 
+       follower.style.left = followerX + "px";
+       follower.style.top = followerY + "px";
+ 
+       requestAnimationFrame(animate);
+     }
+ 
+     animate();
+   </script>
+   
     <!-- Título de la página -->
     <title>CSV Radio</title>
 </head>
@@ -72,6 +133,10 @@ header {
     align-items: center;
 }
 
+    .social-icons {
+      margin-bottom: 5px;
+      margin-top: 30px;
+    }
 /* Menú de navegación */
 nav.menu-fixed {
     flex-grow: 1;
@@ -122,10 +187,6 @@ body, html {
         
 </style>
       
-<audio autoplay loop controls>
-    <source src="./img/Bear McCreary Ft. Raya Yarbrough - Outlander - The Skye Boat Song (Castle Leoch Version) (www.setbeat.com).mp3" type="audio/mpeg">
-    Tu navegador no soporta el elemento de audio.
-</audio>
     <div class="carousel">
         <div class="slide active">
             <img src="./img/radioxdentro (3).jpeg" alt="Imagen 1">
@@ -136,7 +197,7 @@ body, html {
             <div class="caption">STREAMING</div>
         </div>
         <div class="slide">
-            <img src="./img/Radio sumate.jpg" alt="Imagen 3">
+            <img src="./img/bibliotecaradiofrente2.jfif" alt="Imagen 3">
             <div class="caption">TU ESPACIO, TU RADIO</div>
         </div>
       

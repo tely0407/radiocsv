@@ -1,0 +1,357 @@
+/* Media queries para pantallas móviles */
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 6px; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; /* Centra los elementos verticalmente */
+    height: auto; /* Ajusta la altura del header */
+    width: 100vw;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    padding: 5px;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-around; /* Asegura que el menú se distribuya */
+    align-items: center;
+    width: 100%;
+  }
+
+  .header nav ul {
+    display: flex;
+    flex-direction: row; /* Asegura que los enlaces estén en una fila */
+  }
+  .header nav a {
+    font-size: 12px; /* Reduce el tamaño de las palabras */
+    margin: 0 8px; /* Reduce el espaciado entre las palabras */
+  }
+  .header nav ul li a {
+    margin-right: 0px;
+    margin-bottom: 0px; /* Añade espacio entre los enlaces en el menú */
+
+    }
+
+  .social-icons {
+    gap: 10px; /* Reduce el espacio entre los íconos en pantallas pequeñas */
+  }
+
+  .social-icons a {
+    font-size: 12px; /* Reduce el tamaño de los íconos */
+  }
+
+  iframe {
+    height: auto; /* Ajusta la altura del iframe */
+  }
+
+  .menu-fixed {
+    justify-content: center; /* Centra el menú en móviles */
+    flex-direction: column; /* Alinea los elementos del menú en columna */
+  }
+
+  .menu-fixed ul {
+    flex-direction: column; /* Cambia los elementos del menú a columna */
+    gap: 10px; /* Ajusta el espacio entre elementos */
+    margin-right: 0;
+  }
+
+  .menu-fixed ul li a {
+    font-size: 12px; /* Ajusta el tamaño del texto del menú */
+  }
+
+  .menu-hamburguesa {
+    position: relative;
+    left: 20px; /*
+    top: 10px; /* Ajusta la altura para que esté dentro del header */
+  }
+
+  .dropdown-menu {
+    left: 0;
+    right: auto;
+    top: 100%; /* Ajusta la posición del dropdown en móviles */
+    width: 100%; /* Asegura que el menú dropdown ocupe todo el ancho en móviles */
+    max-height: calc(100vh - 50px); /* Altura máxima del menú desplegable */
+    overflow-y: auto; /* Agrega una barra de desplazamiento vertical si es necesario */
+    padding: 10px;
+    background-color: #a8a7ac;
+    scrollbar-width: thin; /* Hace más delgada la barra de desplazamiento en Firefox */
+    scrollbar-color: #615f61 #d4c9c9; /* Estilo de la barra en Firefox */
+    z-index: 150;
+    display: none;
+  }
+  .dropdown-menu.open {
+    display: block;
+  }
+
+  .dropdown-menu li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  .dropdown-menu li :last-child {
+    border-bottom: none;
+  }
+  .dropdown-menu li a {
+    color: #1a1818;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-menu li a:hover {
+    background-color: #413d3d;
+    color: #fff;
+  }
+  /* Estilo de la barra de desplazamiento (WebKit - Chrome, Safari, etc.) */
+  .dropdown-menu::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra */
+  }
+
+  .dropdown-menu::-webkit-scrollbar-track {
+    background: #d4c9c9; /* Color del track */
+  }
+
+  .dropdown-menu::-webkit-scrollbar-thumb {
+    background-color: #615f61; /* Color del pulgar */
+    border-radius: 10px;
+    border: 2px solid #d4c9c9; /* Espacio alrededor del pulgar */
+  }
+}
+@media only screen and (max-width: 768px) {
+  .navbar {
+    padding: 5px 10px; /* Reduce el padding en móviles */
+  }
+
+  .navbar-icons {
+    gap: 10px; /* Ajusta el espacio entre íconos en móviles */
+  }
+}
+/* Ajustes del carrusel para dispositivos móviles */
+@media only screen and (max-width: 768px) {
+  .carousel {
+    max-width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+    height: auto; /* Reduce la altura del carrusel en móviles */
+  }
+
+  .carousel .caption {
+    font-size: 12px; /* Texto más pequeño para móviles */
+    padding: 5px;
+  }
+
+  .buttons button {
+    padding: 8px; /* Botones más pequeños */
+  }
+}
+/* Estilos adaptados para pantallas móviles */
+@media (max-width: 768px) {
+  .text-section {
+    font-size: 8px;
+    margin: 10px auto;
+  }
+
+  .container {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .side-screens {
+    flex-direction: column;
+    text-align: justify;
+  }
+
+  .video-cube {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100px;
+    height: 100px;
+  }
+
+  .youtube-container {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .youtube-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 20px;
+    line-height: 80px;
+  }
+
+  .app-container {
+    align-items: center;
+    gap: 5px;
+  }
+
+  .app {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .fade-text {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  /* Hero Section - Ajuste para móviles */
+  .hero {
+    height: 100vh; /* Ahora ocupará toda la altura de la pantalla */
+    width: 100vw;
+    display: flex;
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    flex-direction: column;
+    padding: 10px 15px;
+    box-sizing: border-box;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 5px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 10px;
+    line-height: 1.2;
+    word-wrap: break-word;
+    left: 0;
+    margin: 0 10px;
+    animation: typing 5s steps(35, end) 1s 1 normal both,
+      blink 0.75s step-end infinite;
+  }
+
+  /* Ajuste del Espaciado */
+  .news-section {
+    padding: 10px;
+  }
+
+  .radio-player-container {
+    flex-direction: column;
+    margin-top: 50px;
+  }
+
+  .subscription-container {
+    width: 95%;
+    margin-top: 10px;
+  }
+
+  /* WhatsApp Button */
+  .btn-wsp {
+    width: 40px;
+    height: 40px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .btn-wsp i {
+    font-size: 20px;
+  }
+
+  /* Ajuste para iconos sociales */
+  .social-icons {
+    justify-content: center;
+    gap: 10px;
+  }
+  /* Título ajustado para móviles */
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Ajuste de la galería en dispositivos móviles */
+  .gallery-container {
+    height: 60vh;
+    padding: 10px;
+  }
+
+  .gallery {
+    width: 100%; /* Mostrar una imagen a la vez */
+    animation: slideMobile 10s infinite ease-in-out;
+  }
+
+  .gallery img {
+    width: 100%; /* Ocupa todo el ancho en móvil */
+    margin: 0;
+  }
+
+  /* Animación de deslizamiento para móviles */
+  @keyframes slideMobile {
+    0%,
+    25% {
+      transform: translateX(0);
+    }
+    50%,
+    75% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(-200%);
+    }
+  }
+
+  /* Ajustes del cubo en móvil */
+  .link-container {
+    height: 40vh;
+    padding: 10px;
+  }
+
+  .link-cube-container {
+    width: 150px;
+    height: 150px;
+  }
+
+  .face {
+    width: 150px;
+    height: 150px;
+  }
+
+  .prefooter {
+    height: 60vh;
+  }
+  /* Footer en Dispositivos Móviles */
+  footer {
+    padding: 5px 0;
+    text-align: center;
+  }
+
+  /* Ajuste del Contenedor del Footer */
+  .footer-container {
+    width: 100%;
+    justify-content: center;
+    padding: 5px;
+    gap: 5px;
+  }
+
+  .footer-container p {
+    margin-top: 40px; /* Reducir margen en móvil */
+  }
+
+  /* Enlaces del Footer */
+  footer a {
+    margin: 0 5px;
+  }
+
+  /* Iconos Sociales */
+  .social-icons a {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 16px;
+    margin: 3px;
+  }
+
+  .linktree-button {
+    width: 25px;
+    height: 25px;
+  }
+}

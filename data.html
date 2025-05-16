@@ -320,3 +320,140 @@ document.addEventListener("DOMContentLoaded", function() {
       }
   };
 </script>
+<div class="social-icons">
+  <a href="https://www.tiktok.com/@csvradio" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+  <a href="https://www.youtube.com/@csvradioonline1501" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+  <a href="https://www.instagram.com/csv_radio" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://x.com/csvradio_online?s=11" target="_blank" title="Twitter">
+      <img src="./img/x.jpg" alt="Twitter">
+  </a>
+  <a href="https://www.facebook.com/somoscsvradio/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+  <div class="button-container">
+      <a href="https://linktr.ee/csvradioonline" class="linktree-button"><img src="./img/linketree.png" alt="Linktree"></a>
+  </div>
+</div>
+header {
+  flex-direction: column;
+  height: auto;
+  padding: 10px 15px;
+}
+
+.header-content {
+  flex-direction: column;
+  padding: 5px;
+}
+
+header nav ul {
+  flex-direction: row;
+}
+
+header nav ul li a {
+  margin-right: 0px;
+}
+
+.menu-fixed ul {
+  display: none !important;
+}
+
+
+.dropdown-menu.active {
+  display: flex !important;
+}
+
+.social-icons {
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+.social-icons a {
+  font-size: 12px;
+}
+
+.social-icons a img {
+  width: 22px;
+  height: 22px;
+}
+
+iframe {
+  height: auto;
+}
+}
+
+@media (min-width: 769px) {
+.menu-fixed ul {
+  display: flex !important;
+}@media (max-width: 768px) {
+  <section>
+    <style>
+        #radio-logo {
+          display: none;
+          max-width: 100%;
+          height: auto;
+          margin: 0 auto;
+          display: block;
+        }
+      
+        #live-stream {
+          display: none;
+          text-align: center;
+        }
+      
+        #live-stream iframe {
+          width: 100%;
+          max-width: 700px;
+          height: 400px;
+          border: none;
+        }
+      
+        section {
+          text-align: center;
+          padding: 20px;
+        }
+      </style>
+      
+      
+        <a href="https://www.youtube.com/@csvradioonline1501" target="_blank" rel="noopener">
+            <img src="./img/layout.png" alt="CSV Radio Online" id="radio-logo">
+          </a>
+          
+    
+      
+      
+        <!-- Contenedor para la transmisión en vivo -->
+        <div id="live-stream">
+          <iframe 
+            src="https://www.youtube.com/embed/live_stream?channel=UCJPpsnbzrDlr2uRNU6zXU4g"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+          </iframe>
+        </div>
+      
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const apiKey = 'AIzaSyCLi1MEOKGmK_9RiPoY2x7pMb_dw1iyfWQ';
+            const channelId = 'UCoFA3wGLxBMMbALPgcwv7yg'; // Este es el ID real del canal
+            const logo = document.getElementById('radio-logo');
+            const liveStream = document.getElementById('live-stream');
+      
+            fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&eventType=live&type=video&key=${apiKey}`)
+              .then(response => response.json())
+              .then(data => {
+                if (data.items && data.items.length > 0) {
+                  // Hay transmisión en vivo
+                  liveStream.style.display = 'block';
+                  logo.style.display = 'none';
+                } else {
+                  // No hay transmisión en vivo
+                  liveStream.style.display = 'none';
+                  logo.style.display = 'block';
+                }
+              })
+              .catch(error => {
+                console.error('Error al verificar la transmisión en vivo:', error);
+                liveStream.style.display = 'none';
+                logo.style.display = 'block';
+              });
+          });
+        </script>
+      </section>
+      

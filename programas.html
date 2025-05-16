@@ -1,181 +1,391 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="CSV RADIO">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    
-    <!-- Estilos CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="./styles.css">
-    
-    <!-- Lazy load script -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" defer></script>
-    
-    <!-- JavaScript -->
-    <script src="./script.js" defer></script>
-    
-    <!-- Título de la página -->
-    <title>CSV Radio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CSV RADIO">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <title>CSV Radio</title>
+
+  <!-- FontAwesome e íconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./styles.css">
+
+  <!-- Lazy load -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" defer></script>
+  <script src="./script.js" defer></script>
+
+  <style> body {
+    background: linear-gradient(90deg, #90cbdb, #8e93d6, #2831a7, #072d6b);
+  }
+</style>
 </head>
+
 <body>
-<!-- Header con menú hamburguesa y redes sociales -->
-<header>
+  <!-- Cursor efecto -->
+  <div class="cursor-follower" id="follower"></div>
+
+  <script>
+    const follower = document.getElementById("follower");
+    let mouseX = 0, mouseY = 0, followerX = 0, followerY = 0, delayStarted = false;
+
+    document.addEventListener("mousemove", (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (!delayStarted) {
+        delayStarted = true;
+        setTimeout(() => {
+          follower.style.display = "block";
+        }, 1000);
+      }
+    });
+
+    function animate() {
+      followerX += (mouseX - followerX) * 0.1;
+      followerY += (mouseY - followerY) * 0.1;
+      follower.style.left = followerX + "px";
+      follower.style.top = followerY + "px";
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+
+  <!-- HEADER -->
+  <header>
+    <!-- Redes sociales -->
     <div class="social-icons">
-        <a href="https://www.tiktok.com/@csvradio" target="_blank" title="tiktok"><i class="fab fa-tiktok"></i></a>
-        <a href="https://www.youtube.com/@csvradioonline1501" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.instagram.com/csv_radio" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://x.com/csvradio_online?s=11" target="_blank" title="Twitter">
-            <img src="./img/x.jpg" alt="Twitter">
-        </a>
-        <a href="https://www.facebook.com/somoscsvradio/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <div class="button-container">
-            <a href="https://linktr.ee/csvradioonline" class="linktree-button"><img src="./img/linketree.png" alt="Linktree"></a>
-        </div>
+      <a href="https://www.tiktok.com/@csvradio" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.youtube.com/@csvradioonline1501" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/csv_radio" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com/csvradio_online?s=11" target="_blank" title="Twitter"><img src="./img/x.jpg" alt="Twitter"></a>
+      <a href="https://www.facebook.com/somoscsvradio/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://linktr.ee/csvradioonline" class="linktree-button" target="_blank"><img src="./img/linketree.png" alt="Linktree"></a>
     </div>
+
+    <!-- Menú fijo -->
     <nav class="menu-fixed">
-        <ul>
-            <li><a href="./index.html">RADIO CSV</a></li>
-            <li><a href="./acerca de nosotros.html">NOSOTROS </a></li>
-            
-            <li><a href="./contact.html">CONTACTO</a></li>
-        </ul>
-            
-              </li>
-              
+      <ul>
+        <li><a href="./index.html">RADIO CSV</a></li>
+        <li><a href="./nosotros.html">NOSOTROS</a></li>
+        <li><a href="./contact.html">CONTACTO</a></li>
+      </ul>
     </nav>
-  
-        <a href="https://api.whatsapp.com/send?phone=5491162476703" class="btn-wsp" target="_blank" title="WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
+
+    <!-- WhatsApp -->
+    <a href="https://api.whatsapp.com/send?phone=5491162476703" class="btn-wsp" target="_blank" title="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
 </header>
 <div class="carousel"> 
-    <div class="slide active">
-        <img src="./img/radio6.jpeg" alt="Imagen 1">
-        <div class="caption">LUNES 18 hs: LOS HDP,LOS HERMANOS DEL PLATA</div>
-        
-        
+    
+    <div class="slide">
+        <img src="./img/presente y pasado2.jpeg" alt="Imagen 1" style="
+        width: 100%;
+        height: 600px;
+        object-fit: contain;
+        object-position: center;
+        border: 4px solid white;
+        border-radius: 20px;
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+        background-color: #000; /* fondo opcional para imágenes más chicas */
+      ">
+      
+        <div class="caption">LUNES 17 hs: PRESENTE  PASADO</div>
     </div>
     <div class="slide">
-        <img src="./img/radioxdentro (3).jpeg" alt="Imagen 2">
+        <img src="./img/pasionracinguista.jpg" alt="Imagen 2" style="
+        width: 100%;
+        height: 600px;
+        object-fit: contain;
+        object-position: center;
+        border: 4px solid white;
+        border-radius: 20px;
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+        background-color: #000; /* fondo opcional para imágenes más chicas */
+      ">
         <div class="caption">LUNES 20 hs: PASION RACINGUISTA</div>
     </div>
-    <div class="slide">
-        <img src="./img/ezequiel guerrero la tertulia.jfif" alt="Imagen 3">
-        <div class="caption">MARTES 17 hs: TERTULIA DE LOS HACEDORES</div>
-    </div>
-    <div class="slide">
-        <img src="./img/apresente y pasado.jpeg" alt="Imagen 4">
-        <div class="caption">MARTES 18 hs: PRESENTE Y PASADO</div>
-    </div>
-    <div class="slide">
-        <img src="./img/sin sulfitos 2.jpeg" alt="Imagen 5">
-        <div class="caption">MIERCOLES 19 hs: SIN SULFITOS</div>
-    </div>
-    <div class="slide">
-        <img src="./img/claudio motonoticias.jpeg" alt="Imagen 6">
-        <div class="caption">MIERCOLES 20 hs: MOTONOTICIAS</div>
-    </div>
-    <div class="slide">
-        <img src="./img/radio7.jpeg" alt="Imagen 7">
-        <div class="caption">JUEVES 15 hs: TODO POR EL TANGO</div>
-    </div>
-    <div class="slide">
-        <img src="./img/atilioycaro.jpeg" alt="Imagen 8">
-        <div class="caption">JUEVES 17 hs: MI BUENOS AIRES QUERIDO</div>
-    </div>
-    <div class="slide">
-        <img src="./img/adetodounpoco1.jpeg" alt="Imagen 9">
-        <div class="caption">VIERNES 16 hs: DE TODO UN POCO</div>
-    </div>
-    <div class="slide">
-        <img src="./img/presenteypasado1.jpeg" alt="Imagen 10">
-        <div class="caption">VIERNES 18 hs: ALGO PARA DECIR</div>
-    </div>
     
+    <div class="slide">
+        <img src="./img/ezequielguerrero.jpg" alt="Imagen 3"style="
+        width: 100%;
+        height: 600px;
+        object-fit: contain;
+        object-position: center;
+        border: 4px solid white;
+        border-radius: 20px;
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+        background-color: #000; /* fondo opcional para imágenes más chicas */
+      ">
+        <div class="caption">MARTES 17 hs: TERTULIA LOS HACEDORES</div>
+    </div>
+<div class="slide">
+            <img src="./img/escenasinfinitas.jpg" alt="Imagen 4" style="
+            width: 100%;
+            height: 600px;
+            object-fit: contain;
+            object-position: center;
+            border: 4px solid white;
+            border-radius: 20px;
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+            background-color: #000; /* fondo opcional para imágenes más chicas */
+          ">
+            <div class="caption">MARTES 19 hs: ESCENAS INFINITAS</div>
+        </div>
+        <div class="slide">
+            <img src="./img/enelliving.jpg" alt="Imagen 5"style="
+            width: 100%;
+            height: 600px;
+            object-fit: contain;
+            object-position: center;
+            border: 4px solid white;
+            border-radius: 20px;
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+            background-color: #000; /* fondo opcional para imágenes más chicas */
+          ">
+            <div class="caption">MARTES 20 hs: EN EL LIVING</div>
+        </div>   <div class="slide">
+          <img src="./img/algoparadecir2.jpeg" alt="Imagen 6"style="
+          width: 100%;
+          height: 600px;
+          object-fit: contain;
+          object-position: center;
+          border: 4px solid white;
+          border-radius: 20px;
+          box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+          background-color: #000; /* fondo opcional para imágenes más chicas */
+        ">
+          <div class="caption">MIERCOLES 17 Hs: Algo Para Decir</div>
+      </div>
+            <div class="slide">
+                <img src="./img/motonoticias.jpg" alt="Imagen 6"style="
+                width: 100%;
+                height: 600px;
+                object-fit: contain;
+                object-position: center;
+                border: 4px solid white;
+                border-radius: 20px;
+                box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+                background-color: #000; /* fondo opcional para imágenes más chicas */
+              ">
+                <div class="caption">MIERCOLES 20 Hs: MOTONOTICIAS</div>
+            </div>
+            <div class="slide">
+            <img src="./img/atilioycaro.jpeg" alt="Imagen 7" style="
+            width: 100%;
+            height: 600px;
+            object-fit: contain;
+            object-position: center;
+            border: 4px solid white;
+            border-radius: 20px;
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+            background-color: #000; /* fondo opcional para imágenes más chicas */
+          ">
+            <div class="caption">JUEVES 17 Hs: MI BS.AS.QUERIDO</div>
+        </div>
+        
+     <div class="slide">
+                <img src="./img/laproximacancion.jpg" alt="Imagen 8"style="
+                width: 100%;
+                height: 600px;
+                object-fit: contain;
+                object-position: center;
+                border: 4px solid white;
+                border-radius: 20px;
+                box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+                background-color: #000; /* fondo opcional para imágenes más chicas */
+              ">
+                <div class="caption">JUEVES 19 hs: LA PRÓXIMA CANCIÓN</div>
+            </div>
+            <div class="slide">
+                <img src="./img/adetodounpoco1.jpeg" alt="Imagen 9"style="
+                width: 100%;
+                height: 600px;
+                object-fit: contain;
+                object-position: center;
+                border: 4px solid white;
+                border-radius: 20px;
+                box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+                background-color: #000; /* fondo opcional para imágenes más chicas */
+              ">
+                <div class="caption">VIERNES 16 hs: ESPECIAL DE TODO UN POCO</div>
+            </div>
+            <div class="slide">
+                <img src="./img/elfierrosagrado.jpg" alt="Imagen 10"style="
+                width: 100%;
+                height: 600px;
+                object-fit: contain;
+                object-position: center;
+                border: 4px solid white;
+                border-radius: 20px;
+                box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+                background-color: #000; /* fondo opcional para imágenes más chicas */
+              ">
+                <div class="caption">VIERNES 20 hs: EL FIERRO SAGRADO</div>
+            </div>      
+               
     <!-- Botones de navegación -->
     <div class="buttons">
         <button id="prev">Anterior</button>
         <button id="next">Siguiente</button>
     </div>
 </div>
-
 <!-- Contenido principal de la página -->
-<section class="descripcion">
-    <div class="descripcion-container">
-        <h2>DESCARGA LA PROGRAMACION</h2>
-        <h1>NO TE PIERDAS NINGUN PROGRAMA</h1>
-        <p>Haz clic en el botón</p>
-        <button onclick="window.location.href='./programacion.html';">GRILLA</button>
-    </div>
-   </section>
+
 <style>
-main {
-    padding-bottom: 60px; /* Espaciado inferior para separar del footer */
-}
-
-/* Estilos para la sección de descripción */
-.descripcion {
-    background-color: #f3f3f3; /* Color de fondo de la sección */
-    padding: 40px; /* Espacio interno */
-    text-align: center; /* Alineación del texto */
-    margin-bottom: 20px; /* Espacio hacia abajo para separar del footer */
-}
-
-.descripcion-container {
-    max-width: 800px; /* Ancho máximo del contenedor de la descripción */
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
-}
-
-
-
-.descripcion p {
-    font-size: 1.2rem; /* Tamaño del texto */
-    line-height: 1.6; /* Altura de línea */
-    color: #666; /* Color del texto */
-    margin-bottom: 20px; /* Espacio inferior del párrafo */
-}
-
-/* Estilos para el botón */
-.descripcion button {
-    display: inline-block; /* Hace que el botón se muestre en línea */
-    padding: 10px 20px; /* Espaciado interno del botón */
-    background-color: #3f3e72; /* Color de fondo del botón */
-    color: white; /* Color del texto del botón */
-    text-decoration: none; /* Quita la subrayado predeterminado */
-    border: none; /* Quita el borde del botón */
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
-    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
-    margin-bottom: 20px;
-}
-
-.descripcion button:hover {
-    background-color: #683668; /* Cambia el color de fondo al pasar el cursor */
+   /* Contenedor del carrusel */
+#carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    width: 60%;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+  
+  /* Estilo para cada slide */
+  #carousel .slide {
+    width: 50%; /* Aseguramos que ocupe todo el ancho disponible */
+    max-width: 200px; /* Controla el tamaño máximo de la imagen */
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  /* Estilo para las imágenes del carrusel */
+  #carousel .slide img {
+    width: 100%;          /* La imagen ocupará todo el ancho disponible */
+    height: 600px;   
+    width: 300px;    /* Aumentamos la altura de la imagen a 600px */
+    object-fit: contain;    /* La imagen cubre el contenedor sin deformarse */
+    object-position: center;  /* Centra la imagen dentro del contenedor */
+    border: 4px solid white;  /* Borde blanco alrededor de la imagen */
+    border-radius: 20px;  /* Redondea las esquinas */
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);  /* Sombra blanca */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  
+  /* Efecto hover */
+  #carousel .slide img:hover {
+    transform: scale(1.05);  /* Agranda la imagen al pasar el ratón */
+    border-color: #6d1a66;   /* Cambia el color del borde */
+  }
+  
+  /* Estilo para las leyendas */
+  #carousel .caption {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+    /* Ajustes para pantallas pequeñas */
+    @media (max-width: 768px) {
+      #carousel {
+        padding: 10px;
+      }
+      
+      #carousel .slide {
+        max-width: 100%;  /* Asegura que las imágenes ocupen todo el ancho disponible */
+        flex: 0 0 100%;   /* Las imágenes se ajustarán al 100% de ancho en dispositivos pequeños */
+      }
+      
+      #carousel .slide img {
+        height: 250px;  /* Limita la altura de las imágenes en pantallas pequeñas */
+        object-fit: cover;  /* Mantiene el ajuste adecuado de la imagen */
+        object-position: center;  /* Asegura que la imagen se centre dentro del contenedor */
+        border-radius: 15px;  /* Ajustamos el redondeo de las esquinas en móviles */
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);  /* Sombra alrededor de la imagen en pantallas pequeñas */
+      }
+      
+      /* Ajustar las imágenes de programación si están en una sección diferente */
+      .descripcion-container img,  /* Si las imágenes de la sección de programación están dentro de un contenedor específico */
+      .btn-download img {
+        width: 100%;  /* Asegura que las imágenes no se salgan del contenedor */
+        height: auto;  /* Mantiene la proporción de la imagen */
+        max-width: 100%;  /* Asegura que no superen el tamaño de su contenedor */
+        max-height: 200px;  /* Limita la altura en dispositivos pequeños */
+        object-fit: contain;  /* Asegura que la imagen se vea correctamente dentro del contenedor */
+        border-radius: 10px;  /* Redondeamos las esquinas */
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);  /* Sombra alrededor de las imágenes */
+      }
     }
-
+  
+    .descripcion {
+      background-color: #f3f3f3;
+      padding: 40px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .descripcion-container {
+      max-width: 800px;
+      margin: 0 auto;
+      margin-bottom: 40px;
+    }
+    
+    .btn-download {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #3f3e72;
+      color: white;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 20px;
+    }
+    
+    .btn-download:hover {
+      background-color: #683668;
+    }
+ 
+      @media (min-width: 768px) {
+        .social-icons {
+          margin-bottom: 10px;
+          margin-top: 40px;
+        }
+      }
     </style>
-    <footer>
-        <div>
-            <a href="./quieroMiPrograma.html">#QUIEROMIPROGRAMA</a>
-            <a href="https://linktr.ee/csvradioonline" target="_blank" title="Redes">REDES</a>
-            <a href="./contact.html" target="_blank" title="Contactanos">CONTACTANOS</a>
-        </div>
-        <div class="social-icons">
-            <a href="https://www.tiktok.com/@csvradio" target="_blank" title="tiktok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.youtube.com/@csvradioonline1501" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.instagram.com/csv_radio" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://x.com/csvradio_online?s=11" target="_blank" title="Twitter">
-                <img src="./img/x.jpg" alt="Twitter">
-            </a>
-            <a href="https://www.facebook.com/somoscsvradio/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <div class="button-container">
-                <a href="https://linktr.ee/csvradioonline" class="linktree-button"><img src="./img/linketree.png" alt="Linktree"></a>
-            </div>
-        </div>
-    </footer>
 
-</body>
-</html>
+  
+  <!-- Contenido principal de la página -->
+<body class="descripcion">
+    <div class="descripcion-container">
+        
+            <!-- Botón para descargar la programación de verano -->
+            <div class="download-button">
+                <a href="./horario/HorarioEneroRadio CSV.pdf.pdf" download="Programacion CSV Radio" class="btn-download">Descargar programación </a>
+            </div>
+        
+            <!-- Segunda imagen -->
+            <img src="./horario/HorarioEneroRadio CSV.pdf.jpg" alt="Horario Actual" height="400" width="900">
+        </div>
+ 
+        <footer>
+            <div>
+                <a href="./quieroMiPrograma.html">#QUIEROMIPROGRAMA</a>
+                <a href="https://linktr.ee/csv_radio" target="_blank" title="Redes">REDES</a>
+                <a href="./contact.html" target="_blank" title="Contactanos">CONTACTANOS</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.tiktok.com/@csvradio" target="_blank" title="tiktok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://open.spotify.com/show/6QuHYXxCTtyOr0hXzuvnnG?si=6QzBCpHfQoq7jUbAVX6uHQ&nd=1&dlsi=d533851c4cb847be" target="_blank" title="spotify"><i class="fab fa-spotify"></i></a>
+                <a href="https://www.youtube.com/@csvradioonline1501" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/csv_radio" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/csvradio_online?s=11" target="_blank" title="Twitter">
+                    <img src="./img/x.jpg" alt="Twitter">
+                </a>
+                <a href="https://www.facebook.com/somoscsvradio/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <div class="button-container">
+                    <a href="https://linktr.ee/csvradioonline" class="linktree-button"><img src="./img/linketree.png" alt="Linktree"></a>
+                </div>
+            </div>
+        </footer>
+          
+        </body>
+        </html>
